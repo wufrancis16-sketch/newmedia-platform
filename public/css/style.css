@@ -3640,8 +3640,23 @@ body.dark-mode .content-item:hover {
   font-weight: 600;
 }
 
+.gen-inline-pain-badge {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
 .gen-inline-card {
   background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #fafafe 100%);
+  margin-bottom: 12px;
+}
+
+.gen-inline-card:last-child {
+  margin-bottom: 0;
+}
   border: 1px solid #e9d5ff;
   border-left: 3px solid #8b5cf6;
   border-radius: 10px;
