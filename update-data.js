@@ -413,7 +413,7 @@ async function main() {
   // 注入评论区分析数据到 app.js 并重新写入
   if (xhsCommentData) {
     const xhsCommentStr = JSON.stringify(xhsCommentData, null, 2);
-    const commentRegex = /const XHS_COMMENT_ANALYSIS = [\s\S]*?\n\};/;
+    const commentRegex = /const XHS_COMMENT_ANALYSIS = [\s\S]*?;(?:\n|$)/;
     if (commentRegex.test(appJs)) {
       appJs = appJs.replace(commentRegex, `const XHS_COMMENT_ANALYSIS = ${xhsCommentStr};`);
     } else {
@@ -421,6 +421,44 @@ async function main() {
     }
     fs.writeFileSync(APP_JS_PATH, appJs, 'utf8');
     console.log('[小红书评论分析] 数据已注入并写入 app.js');
+
+    // 8.6. 运行AI内容生成器，为每个关键词生成小红书种草文案
+    console.log('\n[AI内容生成] 开始为各关键词生成小红书推广文案...');
+    try {
+      const contentGenPath = path.join(__dirname, 'data', 'xhs-content-generator.py');
+      const sysPython = 'C:/Users/Administrator/.workbuddy/binaries/python/versions/3.13.12/python.exe';
+      const pyExec2 = fs.existsSync(sysPython) ? sysPython : (fs.existsSync(venvPython) ? venvPython : 'python3');
+      
+      console.log(`[AI内容生成] 使用 Python: ${pyExec2}`);
+      execSync(`"${pyExec2}" "${contentGenPath}"`, {
+        encoding: 'utf-8',
+        timeout: 60000,
+        cwd: __dirname,
+        stdio: ['pipe', 'pipe', 'pipe']
+      });
+      console.log('[AI内容生成] 内容生成完成');
+
+      // 重新读取更新后的 JSON 并注入到 app.js
+      const analysisJsonPath2 = path.join(__dirname, 'data', 'xhs-comment-analysis.json');
+      if (fs.existsSync(analysisJsonPath2)) {
+        const updatedData = JSON.parse(fs.readFileSync(analysisJsonPath2, 'utf-8'));
+        const updatedCommentStr = JSON.stringify(updatedData, null, 2);
+        // 重新读取 app.js（因为之前已写入）
+        let appJs2 = fs.readFileSync(APP_JS_PATH, 'utf-8');
+        const commentRegex2 = /const XHS_COMMENT_ANALYSIS = [\s\S]*?\n\};/;
+        if (commentRegex2.test(appJs2)) {
+          appJs2 = appJs2.replace(commentRegex2, `const XHS_COMMENT_ANALYSIS = ${updatedCommentStr};`);
+        } else {
+          appJs2 += `\n\n// 小红书评论区分析数据 - 自动生成于 ${new Date().toISOString()}\nconst XHS_COMMENT_ANALYSIS = ${updatedCommentStr};\n`;
+        }
+        fs.writeFileSync(APP_JS_PATH, appJs2, 'utf8');
+        const genCount = updatedData.generated_content?.posts?.length || 0;
+        console.log(`[AI内容生成] 已生成 ${genCount} 篇内容并注入 app.js`);
+      }
+    } catch (err) {
+      console.error('[AI内容生成] 失败:', err.message);
+      console.log('[AI内容生成] 将使用上一次生成的内容');
+    }
   }
   
   // 9. 统计结果
@@ -431,6 +469,7 @@ async function main() {
   console.log(`  小红书: ${xhsItems.length} 个搜索链接`);
   if (xhsCommentData) {
     console.log(`  评论区分析: ${xhsCommentData.posts?.length || 0} 个帖子已分析`);
+    console.log(`  AI生成内容: ${xhsCommentData.generated_content?.posts?.length || 0} 篇文案已生成`);
   }
   console.log('========================================');
 }
