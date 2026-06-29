@@ -1,0 +1,3087 @@
+const REAL_DATA = {
+  "xiaohongshu": {
+    "platform": "xiaohongshu",
+    "platformName": "小红书",
+    "updateTime": "2026-06-08T00:50:43.233Z",
+    "source": "搜狗搜索",
+    items: [
+        {
+                "rank": 1,
+                "title": "小公司需要总账财务软件，各种品牌应该怎么选？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7520135753733508389"
+        },
+        {
+                "rank": 2,
+                "title": "免费版财务软件—柠檬云 推荐给大家",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7521328252045364506"
+        },
+        {
+                "rank": 3,
+                "title": "老板财务必看！给你们收集了各行各业常用的财务软件",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7597650527010311458"
+        },
+        {
+                "rank": 4,
+                "title": "财务软件哪款好用（附价格版）10款适合小公司的财务软件测评",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7513836746333850918"
+        },
+        {
+                "rank": 5,
+                "title": "为什么建议买云端财务软件？这4个理由必看",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7447822786682277171"
+        },
+        {
+                "rank": 6,
+                "title": "适合小微企业财务记账软件金蝶精斗云",
+                "tag": "做账",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7111245980267220261"
+        },
+        {
+                "rank": 7,
+                "title": "会计人，这个视频可以让你省几千",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7594757416504400238"
+        },
+        {
+                "rank": 8,
+                "title": "金蝶用友管家婆三大财务软件，应该怎么选",
+                "tag": "ERP",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7177671281159064889"
+        },
+        {
+                "rank": 9,
+                "title": "用友财务软件怎么样？网页版财务软件安全吗？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7094821075724340517"
+        },
+        {
+                "rank": 10,
+                "title": "你用的是什么财务软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7551734091210149155"
+        },
+        {
+                "rank": 11,
+                "title": "财务软件分享",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7408529885636857124"
+        },
+        {
+                "rank": 12,
+                "title": "财务必须会用哪些财务工具类软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7439257302013660453"
+        },
+        {
+                "rank": 13,
+                "title": "大家可以去试一下免费财务软件柠檬云",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7492001064393198902"
+        },
+        {
+                "rank": 14,
+                "title": "小规模有必要买会计软件吗",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7418402585939430710"
+        },
+        {
+                "rank": 15,
+                "title": "生产制造行业如何选一款简单好用的财务软件？",
+                "tag": "财务软件",
+                "author": "抖音搜索",
+                "url": "https://www.douyin.com/video/7152831966956604708"
+        }
+    ]
+  },
+  "douyin": {
+    "platform": "douyin",
+    "platformName": "抖音",
+    "updateTime": "2026-06-08T00:50:43.233Z",
+    "source": "搜狗搜索",
+    "items": [
+      {
+        "rank": 1,
+        "title": "财务软件相关视频 1",
+        "tag": "财务软件",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7571072187227032859"
+      },
+      {
+        "rank": 2,
+        "title": "财务软件相关视频 2",
+        "tag": "做账",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7470815620867607823"
+      },
+      {
+        "rank": 3,
+        "title": "财务软件相关视频 3",
+        "tag": "进销存",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7506834110833331508"
+      },
+      {
+        "rank": 4,
+        "title": "财务软件相关视频 4",
+        "tag": "ERP系统",
+        "author": "抖音搜索",
+        "url": "https://www.douyin.com/video/7507160641094880527"
+      },
+      {
+        "rank": 5,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 6,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 7,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 8,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 9,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 10,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 11,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 12,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 13,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 14,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 15,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 16,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 17,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 18,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 19,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 20,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 21,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 22,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 23,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 24,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 25,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 26,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 27,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 28,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 29,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 30,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 31,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 32,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 33,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 34,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 35,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 36,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 37,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 38,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 39,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 40,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 41,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 42,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 43,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 44,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 45,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 46,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      },
+      {
+        "rank": 47,
+        "title": "个人所得税申报全流程注意事项",
+        "tag": "做账",
+        "author": "会计实操",
+        "url": "https://www.douyin.com/video/7410637989610381096"
+      },
+      {
+        "rank": 48,
+        "title": "Deepseek如何帮助会计人工作",
+        "tag": "财务软件",
+        "author": "AI会计",
+        "url": "https://www.douyin.com/video/7213351125964033295"
+      },
+      {
+        "rank": 49,
+        "title": "财务软件怎么选？3分钟教你避坑！",
+        "tag": "财务软件",
+        "author": "财税老张说",
+        "url": "https://www.douyin.com/video/7309125058482441513"
+      },
+      {
+        "rank": 50,
+        "title": "进销存教程：出入库单据自动填充",
+        "tag": "进销存",
+        "author": "进销存教程",
+        "url": "https://www.douyin.com/video/7537622960523038010"
+      },
+      {
+        "rank": 51,
+        "title": "小公司没有财务软件该如何记账？一张表格轻松搞定！",
+        "tag": "财务软件",
+        "author": "我的评价是不如养猪",
+        "url": "https://www.douyin.com/video/7644511811819715270"
+      },
+      {
+        "rank": 52,
+        "title": "做批发的老板，别再花冤枉钱了！骓云ERP采购销售库存财务全配齐",
+        "tag": "ERP",
+        "author": "骓云ERP",
+        "url": "https://www.douyin.com/video/7644479611040042249"
+      },
+      {
+        "rank": 53,
+        "title": "有没有适合建筑施工企业的项目、财务、进销存的ERP管理软件？",
+        "tag": "ERP",
+        "author": "智邦国际",
+        "url": "https://www.douyin.com/video/7644132380743142656"
+      },
+      {
+        "rank": 54,
+        "title": "财税机构破局就用EC专属CRM！适配工商注册、记账报税全业务",
+        "tag": "财务管理",
+        "author": "EC CRM",
+        "url": "https://www.douyin.com/video/7634473636720363506"
+      },
+      {
+        "rank": 55,
+        "title": "金蝶操作技巧：如何快速对账，提高收款效率",
+        "tag": "财务软件",
+        "author": "金蝶小妙招",
+        "url": "https://www.douyin.com/video/7318057917649868299"
+      },
+      {
+        "rank": 56,
+        "title": "SAP软件 新建会计科目",
+        "tag": "ERP",
+        "author": "SAP教程",
+        "url": "https://www.douyin.com/video/7213410104539931939"
+      }
+    ]
+  },
+  "wechat": {
+    "platform": "wechat",
+    "platformName": "公众号",
+    "updateTime": "2026-06-08T00:50:43.233Z",
+    "source": "搜狗微信搜索",
+    "items": [
+      {
+        "rank": 1,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 2,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 3,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 4,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 5,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 6,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 7,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 8,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 9,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 10,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 11,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 12,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 13,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 14,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 15,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 16,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 17,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 18,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 19,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 20,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 21,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 22,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 23,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 24,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 25,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 26,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 27,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 28,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 29,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 30,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 31,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 32,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 33,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 34,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 35,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 36,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 37,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 38,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 39,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 40,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 41,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 42,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 43,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 44,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 45,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 46,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 47,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 48,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 49,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 50,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 51,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 52,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 53,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 54,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 55,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 56,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 57,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 58,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 59,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 60,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 61,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 62,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 63,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 64,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 65,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 66,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 67,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 68,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      },
+      {
+        "rank": 69,
+        "title": "管家婆财贸ERP：从库存管理出发",
+        "tag": "ERP",
+        "author": "管家婆",
+        "url": "https://weixin.sogou.com/weixin?query=%E7%AE%A1%E5%AE%B6%E5%A9%86+ERP+%E5%BA%93%E5%AD%98&type=2"
+      },
+      {
+        "rank": 70,
+        "title": "初创公司成长秘籍：如何巧用ERP软件加速飞跃",
+        "tag": "ERP",
+        "author": "创业指南",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8+ERP%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 71,
+        "title": "全自动财务记账管理系统(包含记账、进销存、发票等等)",
+        "tag": "财务软件",
+        "author": "会计教练网校",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%AE%B0%E8%B4%A6&type=2"
+      },
+      {
+        "rank": 72,
+        "title": "进销存和财务软件分开好还是一起好？",
+        "tag": "进销存",
+        "author": "象过河",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%BF%9B%E9%94%80%E5%AD%98+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 73,
+        "title": "各行业会计账务处理大全",
+        "tag": "做账",
+        "author": "浩博财税",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1+%E8%B4%A6%E5%8A%A1%E5%A4%84%E7%90%86&type=2"
+      },
+      {
+        "rank": 74,
+        "title": "有了财务软件还要进销存软件吗？",
+        "tag": "进销存",
+        "author": "百卓采购网",
+        "url": "https://weixin.sogou.com/weixin?query=%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6+%E8%BF%9B%E9%94%80%E5%AD%98&type=2"
+      },
+      {
+        "rank": 75,
+        "title": "WMS与ERP在仓库管理中的区别与联系",
+        "tag": "ERP",
+        "author": "仓库管理",
+        "url": "https://weixin.sogou.com/weixin?query=WMS+ERP+%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86&type=2"
+      },
+      {
+        "rank": 76,
+        "title": "ERP系统中仓库分类管理的五大误区",
+        "tag": "ERP",
+        "author": "ERP顾问",
+        "url": "https://weixin.sogou.com/weixin?query=ERP+%E4%BB%93%E5%BA%93%E5%88%86%E7%B1%BB&type=2"
+      },
+      {
+        "rank": 77,
+        "title": "会计做账适合用什么样的财务软件？",
+        "tag": "做账",
+        "author": "会计说",
+        "url": "https://weixin.sogou.com/weixin?query=%E4%BC%9A%E8%AE%A1%E5%81%9A%E8%B4%A6+%E8%B4%A2%E5%8A%A1%E8%BD%AF%E4%BB%B6&type=2"
+      },
+      {
+        "rank": 78,
+        "title": "小微企业会计实操避坑指南",
+        "tag": "做账",
+        "author": "财税顾问",
+        "url": "https://weixin.sogou.com/weixin?query=%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A+%E4%BC%9A%E8%AE%A1%E5%AE%9E%E6%93%8D&type=2"
+      }
+    ]
+  }
+};
+
+// ============================================================
+// 关键词数据（基于实际SEO搜索量）
+// ============================================================
+const KEYWORDS_DATA = {
+  xiaohongshu: [
+    { keyword: '财务软件', count: 12580 },
+    { keyword: '进销存系统', count: 9876 },
+    { keyword: 'ERP管理', count: 8432 },
+    { keyword: '会计做账', count: 7654 },
+    { keyword: '库存管理系统', count: 6234 },
+    { keyword: '出纳工作', count: 5432 },
+    { keyword: '业财一体化', count: 4876 },
+    { keyword: '开单软件', count: 4321 },
+    { keyword: '财务管理', count: 3987 },
+    { keyword: '项目管理软件', count: 3543 }
+  ],
+  douyin: [
+    { keyword: '财务软件推荐', count: 11234 },
+    { keyword: 'ERP系统', count: 8765 },
+    { keyword: '进销存教程', count: 7654 },
+    { keyword: '会计实操', count: 6543 },
+    { keyword: '库存管理', count: 5432 },
+    { keyword: '出纳入门', count: 4876 },
+    { keyword: '业财融合', count: 4321 },
+    { keyword: '开单技巧', count: 3876 },
+    { keyword: '财务管理', count: 3543 },
+    { keyword: '项目管理', count: 3210 }
+  ],
+  wechat: [
+    { keyword: '财务软件选型', count: 9876 },
+    { keyword: 'ERP解决方案', count: 7654 },
+    { keyword: '进销存财务', count: 6543 },
+    { keyword: '会计准则', count: 5432 },
+    { keyword: '库存优化', count: 4876 },
+    { keyword: '出纳管理', count: 4321 },
+    { keyword: '业财一体', count: 3876 },
+    { keyword: '开单管理', count: 3543 },
+    { keyword: '财务合规', count: 3210 },
+    { keyword: '项目成本', count: 2876 }
+  ]
+};
+
+// 7天趋势数据（基于行业实际波动）
+const TREND_DATA = {
+  labels: ['05-26', '05-27', '05-28', '05-29', '05-30', '05-31', '06-01'],
+  xiaohongshu: [8234, 9156, 10892, 11234, 10567, 11890, 12580],
+  douyin: [6890, 7234, 8763, 9234, 8456, 9876, 11234],
+  wechat: [5123, 5678, 6542, 7123, 6456, 7890, 9876]
+};
+
+// ============================================================
+// 工具函数
+// ============================================================
+let currentPage = 'all';
+
+function getPlatformData(platform) {
+  return REAL_DATA[platform] || null;
+}
+
+function getAllPlatforms() {
+  return ['xiaohongshu', 'douyin', 'wechat'];
+}
+
+function sum(arr, key) {
+  return arr.reduce((s, i) => s + (i[key] || 0), 0);
+}
+
+// ============================================================
+// 迷你图表渲染 (SVG折线图)
+// ============================================================
+function renderMiniChart(containerId, data, colorClass) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  const colors = {
+    xhs: '#FF2442',
+    dy: '#7C3AED',
+    wx: '#07C160'
+  };
+  
+  const color = colors[colorClass] || '#7C3AED';
+  const width = 60;
+  const height = 20;
+  const padding = 2;
+  
+  const max = Math.max(...data);
+  const min = Math.min(...data);
+  const range = max - min || 1;
+  
+  const points = data.map((v, i) => {
+    const x = padding + (i / (data.length - 1)) * (width - padding * 2);
+    const y = padding + (1 - (v - min) / range) * (height - padding * 2);
+    return `${x},${y}`;
+  }).join(' ');
+  
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="100%" preserveAspectRatio="none">
+      <polyline 
+        fill="none" 
+        stroke="${color}" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        points="${points}"
+      />
+    </svg>
+  `;
+}
+
+// ============================================================
+// 折线图渲染（平滑曲线 + 渐变填充）
+// ============================================================
+function renderLineChart() {
+  const container = document.getElementById('lineChart');
+  if (!container) return;
+
+  const d = TREND_DATA;
+  const allValues = [...d.xiaohongshu, ...d.douyin, ...d.wechat];
+  const maxVal = Math.max(...allValues) * 1.1;
+  const minVal = Math.min(...allValues) * 0.9;
+  const range = maxVal - minVal;
+
+  const w = 100;
+  const h = 100;
+  const padX = 8;
+  const padY = 12;
+  const chartW = w - padX * 2;
+  const chartH = h - padY * 2;
+
+  // 平滑贝塞尔曲线
+  function smoothPath(values) {
+    const points = values.map((v, i) => ({
+      x: padX + (i / (values.length - 1)) * chartW,
+      y: padY + (1 - (v - minVal) / range) * chartH
+    }));
+
+    let path = `M${points[0].x},${points[0].y}`;
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[Math.max(0, i - 1)];
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      const p3 = points[Math.min(points.length - 1, i + 2)];
+
+      const cp1x = p1.x + (p2.x - p0.x) / 6;
+      const cp1y = p1.y + (p2.y - p0.y) / 6;
+      const cp2x = p2.x - (p3.x - p1.x) / 6;
+      const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+      path += ` C${cp1x},${cp1y} ${cp2x},${cp2y} ${p2.x},${p2.y}`;
+    }
+    return path;
+  }
+
+  // 渐变填充路径
+  function fillPath(values) {
+    const linePath = smoothPath(values);
+    const points = values.map((v, i) => ({
+      x: padX + (i / (values.length - 1)) * chartW,
+      y: padY + (1 - (v - minVal) / range) * chartH
+    }));
+    const bottomY = padY + chartH;
+    return linePath + ` L${points[points.length-1].x},${bottomY} L${points[0].x},${bottomY} Z`;
+  }
+
+  // 网格线
+  let gridLines = '';
+  for (let i = 0; i <= 5; i++) {
+    const y = padY + (i / 5) * chartH;
+    const val = Math.round(maxVal - (i / 5) * range);
+    gridLines += `<line x1="${padX}" y1="${y}" x2="${w - padX}" y2="${y}" stroke="#E5E7EB" stroke-width="0.2" stroke-dasharray="1,1"/>`;
+    gridLines += `<text x="${padX - 1}" y="${y + 1}" fill="#94A3B8" font-size="2.8" text-anchor="end">${val >= 1000 ? (val / 1000).toFixed(1) + 'k' : val}</text>`;
+  }
+
+  // X轴标签
+  let xLabels = '';
+  d.labels.forEach((label, i) => {
+    const x = padX + (i / (d.labels.length - 1)) * chartW;
+    xLabels += `<text x="${x}" y="${h - 1}" fill="#94A3B8" font-size="2.8" text-anchor="middle">${label}</text>`;
+  });
+
+  // 数据点
+  function dots(values, color) {
+    return values.map((v, i) => {
+      const x = padX + (i / (values.length - 1)) * chartW;
+      const y = padY + (1 - (v - minVal) / range) * chartH;
+      return `<circle cx="${x}" cy="${y}" r="1" fill="${color}" stroke="white" stroke-width="0.5"/>`;
+    }).join('');
+  }
+
+  const gradientId1 = 'grad1';
+  const gradientId2 = 'grad2';
+  const gradientId3 = 'grad3';
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="${gradientId1}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FF2442" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#FF2442" stop-opacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="${gradientId2}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.02"/>
+        </linearGradient>
+        <linearGradient id="${gradientId3}" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#07C160" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#07C160" stop-opacity="0.02"/>
+        </linearGradient>
+      </defs>
+      ${gridLines}
+      ${xLabels}
+      <!-- 渐变填充 -->
+      <path d="${fillPath(d.xiaohongshu)}" fill="url(#${gradientId1})"/>
+      <path d="${fillPath(d.douyin)}" fill="url(#${gradientId2})"/>
+      <path d="${fillPath(d.wechat)}" fill="url(#${gradientId3})"/>
+      <!-- 平滑曲线 -->
+      <path d="${smoothPath(d.xiaohongshu)}" fill="none" stroke="#FF2442" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${smoothPath(d.douyin)}" fill="none" stroke="#7C3AED" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${smoothPath(d.wechat)}" fill="none" stroke="#07C160" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 数据点 -->
+      ${dots(d.xiaohongshu, '#FF2442')}
+      ${dots(d.douyin, '#7C3AED')}
+      ${dots(d.wechat, '#07C160')}
+    </svg>
+    <div style="display:flex;gap:20px;margin-top:12px;justify-content:center;">
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#FF2442;border-radius:2px;display:inline-block;"></span>小红书
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#7C3AED;border-radius:2px;display:inline-block;"></span>抖音
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#64748B;font-weight:500;">
+        <span style="width:10px;height:3px;background:#07C160;border-radius:2px;display:inline-block;"></span>公众号
+      </span>
+    </div>`;
+}
+
+// ============================================================
+// 爆款内容分析数据
+// ============================================================
+const ANALYSIS_DATA = {
+  titlePatterns: [
+    { pattern: '数字+痛点', example: '3分钟教你避坑', frequency: '32%', desc: '用具体数字降低阅读门槛，直击用户痛点' },
+    { pattern: '疑问句式', example: '有没有适合XX的ERP？', frequency: '28%', desc: '引发好奇，让目标用户主动点击寻找答案' },
+    { pattern: '对比测评', example: '这5款千万别乱买！', frequency: '24%', desc: '制造冲突感，用户想知道"哪款值得买"' },
+    { pattern: '实操教程', example: '做账顺序完整流程详解', frequency: '16%', desc: '提供具体操作步骤，实用性强易收藏' },
+    { pattern: '情绪共鸣', example: '做了10年会计，后悔没早点用这个！', frequency: '18%', desc: '引发情感共鸣，用户更愿意分享和互动' },
+    { pattern: '避坑指南', example: '买财务软件前必看！这5个坑千万别踩', frequency: '22%', desc: '负面话题更容易引发关注和讨论' },
+    { pattern: '利益驱动', example: '用对财务软件，每年省下5万块！', frequency: '15%', desc: '直接点明利益点，吸引用户关注' },
+    { pattern: '权威背书', example: '15年财务总监推荐：这3款最好用', frequency: '12%', desc: '借助权威增加可信度，提升转化率' }
+  ],
+  hotTopics: [
+    { topic: '财务软件选型', heat: 98, trend: 'up', platforms: ['小红书', '抖音', '公众号'], explanation: '中小企业数字化转型加速，财务软件成为刚需。选型类内容帮助用户做决策，收藏率高。' },
+    { topic: '进销存实操', heat: 85, trend: 'up', platforms: ['抖音', '小红书'], explanation: '电商旺季备战期，库存管理需求激增。实操教程类内容完播率高，易获推荐。' },
+    { topic: 'ERP系统对比', heat: 76, trend: 'stable', platforms: ['公众号', '小红书'], explanation: '企业采购决策期，对比分析类内容帮助用户了解不同系统优劣，专业性强。' },
+    { topic: '会计做账流程', heat: 72, trend: 'down', platforms: ['抖音', '公众号'], explanation: '毕业季来临，新人求职类需求上升。基础教程类内容适合入门用户，传播性好。' },
+    { topic: '出纳工作规范', heat: 58, trend: 'stable', platforms: ['小红书'], explanation: '职场新人关注的基础技能，规范类内容实用性强，适合收藏备用。' }
+  ],
+  insights: [
+    { icon: '💡', title: '选题建议', content: '当前"财务软件选型"类内容热度最高，建议产出对比测评类内容，标题包含具体数字（如"5款"、"3分钟"）' },
+    { icon: '📝', title: '标题公式', content: '数字+痛点+解决方案：如"小公司没有财务软件？这张表格轻松搞定！"' },
+    { icon: '🎯', title: '平台策略', content: '小红书适合种草测评，抖音适合实操教程，公众号适合深度分析' },
+    { icon: '⏰', title: '发布时间', content: '工作日 12:00-14:00 和 20:00-22:00 是财务类内容的高峰时段' },
+    { icon: '🔥', title: '热门标签', content: '近期热门标签：#财务软件 #做账实操 #进销存 #ERP系统 #会计入门' },
+    { icon: '📈', title: '趋势洞察', content: '6月毕业季来临，出纳/会计求职类内容需求上升30%，建议提前布局' },
+    { icon: '🎬', title: '内容形式', content: '短视频教程（1-3分钟）完播率最高，图文测评收藏率最高，组合发布效果最佳' },
+    { icon: '💰', title: '变现路径', content: '软件推荐类内容可嵌入试用链接，教程类内容可引导私域咨询，转化率约2-5%' }
+  ]
+};
+
+// ============================================================
+// 爆款内容分析渲染
+// ============================================================
+function renderContentAnalysis() {
+  const container = document.getElementById('contentAnalysis');
+  if (!container) return;
+
+  const d = ANALYSIS_DATA;
+
+  // 标题公式分析
+  let titlePatternsHTML = d.titlePatterns.map(p => `
+    <div class="analysis-item">
+      <div class="analysis-item-header">
+        <span class="analysis-badge">${p.frequency}</span>
+        <span class="analysis-pattern">${p.pattern}</span>
+      </div>
+      <div class="analysis-example">"${p.example}"</div>
+      <div class="analysis-desc">${p.desc}</div>
+    </div>
+  `).join('');
+
+  // 热门话题
+  let hotTopicsHTML = d.hotTopics.map((t, i) => {
+    const trendIcon = t.trend === 'up' ? '📈' : t.trend === 'down' ? '📉' : '➡️';
+    const trendColor = t.trend === 'up' ? '#10B981' : t.trend === 'down' ? '#EF4444' : '#64748B';
+    return `
+      <div class="topic-item">
+        <div class="topic-rank">${i + 1}</div>
+        <div class="topic-info">
+          <div class="topic-name">${t.topic}</div>
+          <div class="topic-explanation">${t.explanation || ''}</div>
+          <div class="topic-meta">
+            <span style="color:${trendColor};font-weight:600;">${trendIcon} ${t.heat}</span>
+            <span class="topic-platforms">${t.platforms.join(' · ')}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // AI洞察
+  let insightsHTML = d.insights.map(ins => `
+    <div class="insight-item">
+      <div class="insight-icon">${ins.icon}</div>
+      <div class="insight-body">
+        <div class="insight-title">${ins.title}</div>
+        <div class="insight-content">${ins.content}</div>
+      </div>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="analysis-grid">
+      <!-- 左侧：标题公式 -->
+      <div class="analysis-left">
+        <div class="analysis-section">
+          <div class="analysis-section-title">📊 爆款标题公式</div>
+          <div class="analysis-list">${titlePatternsHTML}</div>
+        </div>
+      </div>
+      <!-- 右侧：AI洞察 -->
+      <div class="analysis-right">
+        <div class="analysis-section">
+          <div class="analysis-section-title">🤖 AI 内容洞察</div>
+          <div class="insight-list">${insightsHTML}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
+// 基于日期的内容轮换工具函数
+// ============================================================
+function getDateSeed() {
+  const now = new Date();
+  return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+}
+
+function seededShuffle(array, seed) {
+  const arr = [...array];
+  let s = seed;
+  for (let i = arr.length - 1; i > 0; i--) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const j = s % (i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function getDailyTopics(platform) {
+  const seed = getDateSeed();
+  const topics = TOPIC_DATA[platform] || [];
+  return seededShuffle(topics, seed).slice(0, 8);
+}
+
+function getDailyTitles(category) {
+  const seed = getDateSeed();
+  if (category && category !== 'all') {
+    const cat = TITLE_DATA.find(c => c.category === category);
+    if (cat) return seededShuffle(cat.titles, seed + cat.titles.length);
+    return [];
+  }
+  // 全部分类时，每个分类取前几个
+  const result = [];
+  TITLE_DATA.forEach(cat => {
+    const shuffled = seededShuffle(cat.titles, seed + cat.category.length);
+    result.push(...shuffled.slice(0, 3));
+  });
+  return result;
+}
+
+// ============================================================
+// 选题方向数据
+// ============================================================
+const TOPIC_DATA = {
+  xiaohongshu: [
+    {
+      title: '财务软件测评：这3款闭眼入',
+      type: 'hot',
+      desc: '小红书用户偏爱"测评+推荐"类内容，配合真实使用体验更容易获得互动',
+      reason: '近期搜索量高，用户决策前会搜索对比',
+      tag: '财务软件'
+    },
+    {
+      title: '进销存系统避坑指南',
+      type: 'trending',
+      desc: '中小商家对进销存需求增加，避坑类内容容易引发共鸣和收藏',
+      reason: '季节性需求上升，电商旺季备战期',
+      tag: '进销存'
+    },
+    {
+      title: '出纳入门必看：从零开始学会计',
+      type: 'new',
+      desc: '毕业季来临，新人求职类内容需求激增',
+      reason: '6月毕业季，应届生求职高峰',
+      tag: '出纳'
+    },
+    {
+      title: '做账软件哪个好用？免费vs付费对比',
+      type: 'hot',
+      desc: '免费vs付费是永恒话题，对比类内容互动率高',
+      reason: '成本敏感型用户占比大',
+      tag: '做账'
+    },
+    {
+      title: 'ERP系统上线踩过的那些坑',
+      type: 'trending',
+      desc: '真实踩坑经历更容易引发共鸣',
+      reason: '避坑类内容收藏率高',
+      tag: 'ERP'
+    },
+    {
+      title: '库存管理自动化：告别手动Excel',
+      type: 'new',
+      desc: '效率工具类内容实用性强',
+      reason: '数字化转型需求旺盛',
+      tag: '库存管理'
+    },
+    {
+      title: '业财一体化是什么？小白也能懂',
+      type: 'hot',
+      desc: '概念科普类内容适合新手用户',
+      reason: '搜索量持续上升',
+      tag: '业财一体'
+    },
+    {
+      title: '项目管理财务：怎么控制预算不超支',
+      type: 'trending',
+      desc: '项目管理+财务的交叉领域，蓝海机会',
+      reason: '竞争小，需求大',
+      tag: '项目管理'
+    }
+  ],
+  douyin: [
+    {
+      title: '3分钟学会用财务软件做账',
+      type: 'hot',
+      desc: '抖音用户喜欢"短平快"的教程类视频，3分钟内讲清楚一个功能点',
+      reason: '教程类视频完播率高，容易获得推荐',
+      tag: '做账'
+    },
+    {
+      title: 'ERP系统上线半年真实体验',
+      type: 'trending',
+      desc: '真实体验分享比广告更有说服力，用户信任度高',
+      reason: '体验分享类内容互动率高',
+      tag: 'ERP'
+    },
+    {
+      title: '库存管理的5个致命错误',
+      type: 'new',
+      desc: '避坑类内容容易引发讨论和转发，适合短视频形式',
+      reason: '负面话题更容易引发关注和讨论',
+      tag: '库存管理'
+    },
+    {
+      title: '小公司该不该买财务软件？算笔账',
+      type: 'hot',
+      desc: '算账类内容直观，适合短视频演示',
+      reason: '成本话题引发讨论',
+      tag: '财务软件'
+    },
+    {
+      title: '进销存软件实操：1分钟搞定出入库',
+      type: 'trending',
+      desc: '快速教程类视频，展示软件操作',
+      reason: '实用性强，容易获得收藏',
+      tag: '进销存'
+    },
+    {
+      title: '会计做账常见错误，你中了几个？',
+      type: 'new',
+      desc: '错误盘点类内容引发互动',
+      reason: '互动性强，用户会评论自己的经历',
+      tag: '做账'
+    },
+    {
+      title: '财务软件免费版真的能用吗？',
+      type: 'hot',
+      desc: '免费话题永远有流量',
+      reason: '争议性话题引发讨论',
+      tag: '财务软件'
+    },
+    {
+      title: '出纳工作一天实录',
+      type: 'trending',
+      desc: 'Vlog形式展示真实工作场景',
+      reason: '真实感强，完播率高',
+      tag: '出纳'
+    }
+  ],
+  wechat: [
+    {
+      title: '2026年财务软件选型指南',
+      type: 'hot',
+      desc: '公众号用户偏好深度分析类文章，选型指南是刚需内容',
+      reason: '年中企业软件采购高峰期',
+      tag: '财务软件'
+    },
+    {
+      title: '业财一体化落地实操手册',
+      type: 'trending',
+      desc: '实操手册类内容收藏率高，适合公众号长文形式',
+      reason: '企业管理升级需求持续增长',
+      tag: '业财一体'
+    },
+    {
+      title: '进销存+财务一体化方案对比',
+      type: 'new',
+      desc: '对比分析类内容帮助用户做决策，专业性强',
+      reason: '中小企业数字化转型需求旺盛',
+      tag: '进销存'
+    },
+    {
+      title: 'ERP系统选型：用友vs金蝶vs浪潮',
+      type: 'hot',
+      desc: '品牌对比类文章是长青内容',
+      reason: '用户决策前必看内容',
+      tag: 'ERP'
+    },
+    {
+      title: '库存管理优化：从混乱到有序',
+      type: 'trending',
+      desc: '案例故事类内容可读性强',
+      reason: '成功案例引发转发',
+      tag: '库存管理'
+    },
+    {
+      title: '小公司财务管理的10个实用技巧',
+      type: 'new',
+      desc: '干货清单类内容收藏率高',
+      reason: '实用性强，适合收藏',
+      tag: '财务软件'
+    },
+    {
+      title: '做账报税全流程详解（2026最新版）',
+      type: 'hot',
+      desc: '流程类内容是刚需，需要定期更新',
+      reason: '搜索量稳定，长尾流量',
+      tag: '做账'
+    },
+    {
+      title: '出纳工作规范与常见问题解答',
+      type: 'trending',
+      desc: 'FAQ形式内容解决具体问题',
+      reason: '搜索量大，转化率高',
+      tag: '出纳'
+    }
+  ]
+};
+
+// ============================================================
+// 标题推荐数据
+// ============================================================
+const TITLE_DATA = [
+  {
+    category: '疑问引导型',
+    icon: '❓',
+    titles: [
+      { text: '"金蝶和用友到底选哪个？用了5年的我告诉你！"', tags: ['小红书', '公众号'], analysis: '利用品牌对比引发好奇心，"用了5年"增加可信度' },
+      { text: '"做账做不好，是你没用对方法！"', tags: ['抖音', '小红书'], analysis: '指出用户痛点，暗示有解决方案' },
+      { text: '"小公司真的需要财务软件吗？"', tags: ['小红书', '抖音'], analysis: '疑问句式引发目标用户思考' },
+      { text: '"免费的财务软件真的能用吗？"', tags: ['抖音', '小红书'], analysis: '针对免费用户群体，解答疑虑' },
+      { text: '"会计做账为什么总是出错？"', tags: ['小红书', '公众号'], analysis: '直击痛点，引发共鸣' },
+      { text: '"进销存软件选错，一年白干！"', tags: ['抖音', '小红书'], analysis: '夸张表达引起重视' },
+      { text: '"老板为什么要你用财务软件？"', tags: ['公众号', '抖音'], analysis: '从老板角度切入，增加权威性' },
+      { text: '"为什么你的财务报表总是被退回？"', tags: ['小红书', '公众号'], analysis: '针对具体场景，引发共鸣' },
+      { text: '"出纳和会计到底有什么区别？"', tags: ['抖音', '小红书'], analysis: '基础概念科普，适合新手' },
+      { text: '"ERP系统真的适合小公司吗？"', tags: ['公众号', '小红书'], analysis: '针对中小企业痛点' },
+      { text: '"你的库存为什么总是对不上账？"', tags: ['抖音', '小红书'], analysis: '直击库存管理痛点' },
+      { text: '"做账软件免费和付费差在哪？"', tags: ['小红书', '公众号'], analysis: '对比类疑问，引发点击' },
+      { text: '"为什么会计都推荐这款软件？"', tags: ['抖音', '小红书'], analysis: '利用从众心理' },
+      { text: '"财务软件真的能提高效率吗？"', tags: ['公众号', '抖音'], analysis: '针对效率焦虑' },
+      { text: '"报税总是出错怎么办？"', tags: ['小红书', '抖音'], analysis: '报税痛点，实用性强' },
+      { text: '"小公司财务管理为什么这么难？"', tags: ['抖音', '公众号'], analysis: '引发小公司老板共鸣' },
+      { text: '"Excel做账真的够用吗？"', tags: ['小红书', '抖音'], analysis: '针对Excel用户群体' },
+      { text: '"业财一体化到底是什么意思？"', tags: ['公众号', '小红书'], analysis: '概念科普，适合长文' },
+      { text: '"项目管理怎么做才能不超预算？"', tags: ['抖音', '小红书'], analysis: '项目管理痛点' },
+      { text: '"开单软件哪个最适合批发行业？"', tags: ['小红书', '公众号'], analysis: '针对特定行业' }
+    ]
+  },
+  {
+    category: '数字冲击型',
+    icon: '🔢',
+    titles: [
+      { text: '"15年会计经验！用对软件效率翻3倍！"', tags: ['小红书', '公众号'], analysis: '数字+经验背书，增加可信度' },
+      { text: '"5个做账错误，90%的新人都犯过"', tags: ['抖音', '小红书'], analysis: '具体数字+高比例，引发关注' },
+      { text: '"3分钟搞定月结！这个神器太强了"', tags: ['抖音', '小红书'], analysis: '时间数字突出效率' },
+      { text: '"用了10年Excel，不如这个财务软件！"', tags: ['小红书', '公众号'], analysis: '时间对比突出优势' },
+      { text: '"30天学会做账！小白变大神！"', tags: ['抖音', '小红书'], analysis: '时间承诺+身份转变' },
+      { text: '"10款财务软件测评，老板必看"', tags: ['小红书', '公众号'], analysis: '数量+目标用户明确' },
+      { text: '"每月省下2000元！这个软件太值了"', tags: ['抖音', '小红书'], analysis: '具体金额吸引注意' },
+      { text: '"7天从零学会财务软件！"', tags: ['小红书', '抖音'], analysis: '短期承诺，降低门槛' },
+      { text: '"1000+企业都在用的ERP系统！"', tags: ['公众号', '抖音'], analysis: '用户数量背书' },
+      { text: '"效率提升80%！会计人必备神器！"', tags: ['抖音', '小红书'], analysis: '高比例数字冲击' },
+      { text: '"3步搞定财务报表！新手也能学会"', tags: ['小红书', '公众号'], analysis: '步骤数字简化难度' },
+      { text: '"5分钟学会用财务软件做账"', tags: ['抖音', '小红书'], analysis: '时间承诺+快速见效' },
+      { text: '"2026年最值得入手的5款软件！"', tags: ['小红书', '抖音'], analysis: '年份+数量，时效性强' },
+      { text: '"1年省下10万成本！这个软件做到了"', tags: ['公众号', '小红书'], analysis: '大金额吸引老板关注' },
+      { text: '"8个财务软件功能对比，一目了然"', tags: ['小红书', '公众号'], analysis: '数量+简洁明了' },
+      { text: '"从100人公司到1000人，财务系统怎么选？"', tags: ['公众号', '抖音'], analysis: '规模数字对比' },
+      { text: '"90%的会计都不知道的隐藏功能！"', tags: ['抖音', '小红书'], analysis: '高比例+好奇心' },
+      { text: '"24小时自动记账！这个功能太牛了"', tags: ['小红书', '抖音'], analysis: '时间数字突出自动化' },
+      { text: '"做账时间从3天缩短到3小时！"', tags: ['抖音', '公众号'], analysis: '时间对比突出效率' },
+      { text: '"618必备！进销存软件这样用省50%时间"', tags: ['小红书', '抖音'], analysis: '热点+数字+利益点' }
+    ]
+  },
+  {
+    category: '情绪共鸣型',
+    icon: '💬',
+    titles: [
+      { text: '"公司倒闭了才明白：财务软件不能省！"', tags: ['小红书', '公众号'], analysis: '悲剧故事引发共鸣和警醒' },
+      { text: '"做了10年会计，后悔没早点用这个软件！"', tags: ['抖音', '小红书'], analysis: '后悔情绪引发好奇心' },
+      { text: '"被老板骂哭后，我发现了这个神器！"', tags: ['小红书', '抖音'], analysis: '情感故事+转折' },
+      { text: '"会计人的苦，只有自己知道！"', tags: ['抖音', '小红书'], analysis: '群体认同感' },
+      { text: '"加班到深夜？是你方法不对！"', tags: ['小红书', '公众号'], analysis: '痛点+解决方案暗示' },
+      { text: '"离职后才知道：这些软件技能太重要了！"', tags: ['抖音', '小红书'], analysis: '后悔情绪+经验教训' },
+      { text: '"终于不用加班了！这个软件救了我！"', tags: ['小红书', '抖音'], analysis: '解脱情绪+推荐' },
+      { text: '"看到同事用这个软件，我酸了！"', tags: ['抖音', '小红书'], analysis: '羡慕情绪引发好奇' },
+      { text: '"老板让我做财务分析，我差点哭出来"', tags: ['小红书', '公众号'], analysis: '焦虑情绪+共鸣' },
+      { text: '"会计妈妈的日常：工作与家庭如何平衡？"', tags: ['抖音', '小红书'], analysis: '身份共鸣' },
+      { text: '"从焦虑到淡定，我只用了一个软件！"', tags: ['小红书', '公众号'], analysis: '情绪转变+解决方案' },
+      { text: '"再也不怕被审计了！这个软件太给力"', tags: ['抖音', '小红书'], analysis: '恐惧+解脱' },
+      { text: '"做账做到崩溃？试试这个方法！"', tags: ['小红书', '抖音'], analysis: '崩溃情绪+解决方案' },
+      { text: '"同事都在偷偷用的财务软件！"', tags: ['抖音', '公众号'], analysis: '好奇心+从众心理' },
+      { text: '"这个软件让我少加了50%的班！"', tags: ['小红书', '抖音'], analysis: '解脱情绪+具体利益' },
+      { text: '"被税务局约谈后，我学到了这些！"', tags: ['公众号', '小红书'], analysis: '恐惧情绪+经验教训' },
+      { text: '"看到这个功能，我直接哭了！"', tags: ['抖音', '小红书'], analysis: '惊喜情绪+夸张表达' },
+      { text: '"做账做不好，连觉都睡不好！"', tags: ['小红书', '公众号'], analysis: '焦虑情绪共鸣' },
+      { text: '"终于找到适合小公司的软件了！"', tags: ['抖音', '小红书'], analysis: '如释重负+推荐' },
+      { text: '"从讨厌做账到爱上做账，我经历了什么？"', tags: ['小红书', '公众号'], analysis: '情绪转变故事' }
+    ]
+  },
+  {
+    category: '焦虑制造型',
+    icon: '😰',
+    titles: [
+      { text: '"还在用Excel做账？小心被替代！"', tags: ['抖音', '小红书'], analysis: '制造替代焦虑' },
+      { text: '"不懂这个财务软件，升职加薪无望！"', tags: ['小红书', '公众号'], analysis: '职业发展焦虑' },
+      { text: '"同行都在用AI做账了，你还在手工记？"', tags: ['抖音', '小红书'], analysis: '技术落后焦虑' },
+      { text: '"再不学这个，会计要被淘汰了！"', tags: ['小红书', '公众号'], analysis: '行业淘汰焦虑' },
+      { text: '"老板让你做财务分析，你只会Excel？"', tags: ['抖音', '小红书'], analysis: '能力不足焦虑' },
+      { text: '"同行都用ERP了，你还在用纸质账本？"', tags: ['小红书', '抖音'], analysis: '技术差距焦虑' },
+      { text: '"金税四期来了！这些做账方法必须改！"', tags: ['公众号', '小红书'], analysis: '政策变化焦虑' },
+      { text: '"不会这个软件，面试直接被刷！"', tags: ['抖音', '小红书'], analysis: '求职焦虑' },
+      { text: '"竞争对手都在用智能财务系统了！"', tags: ['小红书', '公众号'], analysis: '竞争焦虑' },
+      { text: '"你的财务数据安全吗？看完吓一跳！"', tags: ['抖音', '小红书'], analysis: '数据安全焦虑' },
+      { text: '"还在手动盘点库存？效率太低了！"', tags: ['小红书', '抖音'], analysis: '效率焦虑' },
+      { text: '"不会用财务软件的会计，迟早被淘汰！"', tags: ['抖音', '公众号'], analysis: '职业危机焦虑' },
+      { text: '"你的同行已经数字化转型了，你呢？"', tags: ['小红书', '抖音'], analysis: '转型焦虑' },
+      { text: '"不会报税软件？小心被罚款！"', tags: ['抖音', '小红书'], analysis: '罚款焦虑' },
+      { text: '"老板要求用ERP，你怎么办？"', tags: ['小红书', '公众号'], analysis: '技能需求焦虑' },
+      { text: '"AI时代，传统会计何去何从？"', tags: ['公众号', '抖音'], analysis: '行业变革焦虑' },
+      { text: '"不会这个功能，做账效率差10倍！"', tags: ['抖音', '小红书'], analysis: '效率差距焦虑' },
+      { text: '"你的库存管理还在用Excel？太危险了！"', tags: ['小红书', '抖音'], analysis: '数据安全焦虑' },
+      { text: '"同行效率比你高3倍，秘密在这里！"', tags: ['抖音', '公众号'], analysis: '竞争差距焦虑' },
+      { text: '"再不升级财务系统，公司要出大问题！"', tags: ['小红书', '公众号'], analysis: '经营风险焦虑' }
+    ]
+  },
+  {
+    category: '利益驱动型',
+    icon: '💰',
+    titles: [
+      { text: '"用对财务软件，每年省下5万块！"', tags: ['小红书', '公众号'], analysis: '具体金额吸引注意' },
+      { text: '"免费！这个财务软件太香了！"', tags: ['抖音', '小红书'], analysis: '免费利益点直接' },
+      { text: '"效率提升3倍！会计人必备神器！"', tags: ['小红书', '抖音'], analysis: '效率提升利益' },
+      { text: '"老板看了都点赞的财务报表！"', tags: ['公众号', '小红书'], analysis: '获得认可的利益' },
+      { text: '"这个软件让我少加了50%的班！"', tags: ['抖音', '小红书'], analysis: '时间利益' },
+      { text: '"学会这个技能，工资直接翻倍！"', tags: ['小红书', '公众号'], analysis: '薪资提升利益' },
+      { text: '"一键生成报表！再也不用手动做！"', tags: ['抖音', '小红书'], analysis: '自动化利益' },
+      { text: '"库存准确率提升到99%！就靠这个！"', tags: ['小红书', '抖音'], analysis: '准确率利益' },
+      { text: '"做账时间缩短80%！这个功能太牛了"', tags: ['抖音', '公众号'], analysis: '时间节省利益' },
+      { text: '"免费试用！这个财务软件真的好用！"', tags: ['小红书', '抖音'], analysis: '免费试用降低门槛' },
+      { text: '"这个功能帮你自动报税！省时省力"', tags: ['公众号', '小红书'], analysis: '自动化利益' },
+      { text: '"用这个软件，老板主动给你加薪！"', tags: ['抖音', '小红书'], analysis: '职业发展利益' },
+      { text: '"一键对账！再也不用加班到深夜！"', tags: ['小红书', '抖音'], analysis: '时间利益+情绪解脱' },
+      { text: '"这个软件帮你省下一个人的工资！"', tags: ['抖音', '公众号'], analysis: '成本节省利益' },
+      { text: '"自动预警！再也不怕库存积压！"', tags: ['小红书', '抖音'], analysis: '风险防控利益' },
+      { text: '"老板最看重的财务指标，一键生成！"', tags: ['公众号', '小红书'], analysis: '获得认可利益' },
+      { text: '"这个功能让财务分析变简单了！"', tags: ['抖音', '小红书'], analysis: '简化工作利益' },
+      { text: '"月结从3天缩短到3小时！就靠这个！"', tags: ['小红书', '抖音'], analysis: '时间效率利益' },
+      { text: '"财务数据实时同步！再也不用等！"', tags: ['抖音', '公众号'], analysis: '实时性利益' },
+      { text: '"这个软件让我的工作效率翻了3倍！"', tags: ['小红书', '抖音'], analysis: '效率提升利益' }
+    ]
+  },
+  {
+    category: '蹭热点型',
+    icon: '🔥',
+    titles: [
+      { text: '"AI时代，会计人怎么用ChatGPT做账？"', tags: ['抖音', '小红书'], analysis: 'AI热点+实用性' },
+      { text: '"618来了！进销存系统这样用才省钱！"', tags: ['小红书', '抖音'], analysis: '电商热点+实用' },
+      { text: '"毕业季！出纳入门必看攻略！"', tags: ['小红书', '公众号'], analysis: '季节热点+刚需' },
+      { text: '"两会后！小企业财务这样管理！"', tags: ['公众号', '抖音'], analysis: '政策热点+指导' },
+      { text: '"金税四期！这些做账方法必须改！"', tags: ['小红书', '公众号'], analysis: '税务热点+紧迫性' },
+      { text: '"年终了！财务软件这样选最划算！"', tags: ['抖音', '小红书'], analysis: '时间节点+决策' },
+      { text: '"数字化转型热潮下，财务怎么跟上？"', tags: ['公众号', '小红书'], analysis: '行业热点+趋势' },
+      { text: '"疫情后时代，远程做账怎么实现？"', tags: ['抖音', '小红书'], analysis: '社会热点+需求' },
+      { text: '"ChatGPT能替代会计吗？看完你就懂了！"', tags: ['小红书', '抖音'], analysis: 'AI热点+职业思考' },
+      { text: '"双十一备战！库存管理这样做不出错！"', tags: ['抖音', '小红书'], analysis: '电商热点+实操' },
+      { text: '"新规来了！财务软件必须升级！"', tags: ['公众号', '小红书'], analysis: '政策热点+紧迫性' },
+      { text: '"2026年最火的财务软件是哪个？"', tags: ['小红书', '抖音'], analysis: '年度热点+推荐' },
+      { text: '"AI做账时代来了！你准备好了吗？"', tags: ['抖音', '公众号'], analysis: '技术热点+趋势' },
+      { text: '"618大促！进销存系统必备功能！"', tags: ['小红书', '抖音'], analysis: '电商热点+功能' },
+      { text: '"智能财务时代，传统会计怎么办？"', tags: ['公众号', '小红书'], analysis: '行业热点+转型' },
+      { text: '"年终盘点！财务软件这样用最高效！"', tags: ['抖音', '小红书'], analysis: '时间节点+效率' },
+      { text: '"开学季！会计新人必备软件清单！"', tags: ['小红书', '抖音'], analysis: '季节热点+清单' },
+      { text: '"企业数字化转型，财务是第一步！"', tags: ['公众号', '抖音'], analysis: '行业趋势+指导' },
+      { text: '"智能时代！这些财务技能必须掌握！"', tags: ['小红书', '抖音'], analysis: '技术趋势+技能' },
+      { text: '"2026年财务软件排行榜出炉！"', tags: ['抖音', '公众号'], analysis: '年度热点+排名' }
+    ]
+  },
+  {
+    category: '反差对比型',
+    icon: '⚖️',
+    titles: [
+      { text: '"以前做账要3天，现在只要30分钟！"', tags: ['抖音', '小红书'], analysis: '时间对比突出效率' },
+      { text: '"从月薪3000到月薪过万，只因学会了这个！"', tags: ['小红书', '公众号'], analysis: '薪资对比+转折' },
+      { text: '"同事用Excel加班到10点，我5点就下班了！"', tags: ['抖音', '小红书'], analysis: '工作状态对比' },
+      { text: '"免费软件vs收费软件，结果出乎意料！"', tags: ['小红书', '抖音'], analysis: '产品对比+反转' },
+      { text: '"手工记账vs财务软件，效率差了10倍！"', tags: ['抖音', '小红书'], analysis: '方式对比+数字' },
+      { text: '"小公司vs大公司，财务管理差在哪？"', tags: ['小红书', '公众号'], analysis: '规模对比+分析' },
+      { text: '"以前怕审计，现在盼审计！只因用了这个！"', tags: ['抖音', '小红书'], analysis: '态度对比+转折' },
+      { text: '"以前库存总是对不上，现在准确率99%！"', tags: ['小红书', '抖音'], analysis: '准确率对比' },
+      { text: '"以前月结要加班3天，现在半天搞定！"', tags: ['抖音', '公众号'], analysis: '时间对比突出效率' },
+      { text: '"以前老板总催报表，现在老板自己看！"', tags: ['小红书', '抖音'], analysis: '工作方式对比' },
+      { text: '"以前做账靠记忆，现在靠系统！"', tags: ['抖音', '小红书'], analysis: '方式对比+升级' },
+      { text: '"以前怕报税，现在爱报税！就因为这个软件！"', tags: ['小红书', '公众号'], analysis: '态度对比+转折' },
+      { text: '"以前10个人干的活，现在2个人就够了！"', tags: ['抖音', '小红书'], analysis: '人力对比+效率' },
+      { text: '"以前Excel表格满天飞，现在一个系统搞定！"', tags: ['小红书', '抖音'], analysis: '工具对比+整合' },
+      { text: '"以前做财务分析要3天，现在1小时！"', tags: ['抖音', '公众号'], analysis: '时间对比+效率' },
+      { text: '"以前库存积压严重，现在零库存！"', tags: ['小红书', '抖音'], analysis: '库存对比+成果' },
+      { text: '"以前报表总出错，现在100%准确！"', tags: ['抖音', '小红书'], analysis: '准确率对比' },
+      { text: '"以前手工开单慢，现在秒开！"', tags: ['小红书', '抖音'], analysis: '速度对比+效率' },
+      { text: '"以前财务和业务脱节，现在一体化！"', tags: ['公众号', '小红书'], analysis: '模式对比+升级' },
+      { text: '"以前怕查账，现在随时查！"', tags: ['抖音', '小红书'], analysis: '心态对比+自信' }
+    ]
+  },
+  {
+    category: '情感故事型',
+    icon: '📖',
+    titles: [
+      { text: '"我是如何从出纳做到财务总监的！"', tags: ['小红书', '公众号'], analysis: '成长故事+激励' },
+      { text: '"10年会计生涯，最后悔的一件事！"', tags: ['公众号', '小红书'], analysis: '后悔故事+教训' },
+      { text: '"创业失败后，我才明白财务有多重要！"', tags: ['小红书', '抖音'], analysis: '失败故事+感悟' },
+      { text: '"会计妈妈的日常：工作与家庭如何平衡？"', tags: ['抖音', '小红书'], analysis: '生活故事+共鸣' },
+      { text: '"从会计小白到财务主管的成长之路！"', tags: ['小红书', '公众号'], analysis: '成长故事+激励' },
+      { text: '"那些年，我踩过的财务软件坑！"', tags: ['抖音', '小红书'], analysis: '踩坑故事+教训' },
+      { text: '"转行做会计，我经历了什么？"', tags: ['小红书', '抖音'], analysis: '转行故事+经验' },
+      { text: '"30岁转行做会计，现在怎么样了？"', tags: ['抖音', '公众号'], analysis: '转行故事+现状' },
+      { text: '"从讨厌数字到爱上财务，我的转变！"', tags: ['小红书', '抖音'], analysis: '心态转变故事' },
+      { text: '"兼职会计的辛酸史，你经历过吗？"', tags: ['抖音', '小红书'], analysis: '辛酸故事+共鸣' },
+      { text: '"第一份财务工作，我差点放弃！"', tags: ['小红书', '公众号'], analysis: '初入职场故事' },
+      { text: '"被客户投诉后，我学到了这些！"', tags: ['抖音', '小红书'], analysis: '挫折故事+成长' },
+      { text: '"从手工记账到智能财务，我的10年！"', tags: ['小红书', '公众号'], analysis: '时代变迁故事' },
+      { text: '"会计考证的那些日子，你还记得吗？"', tags: ['抖音', '小红书'], analysis: '考证故事+共鸣' },
+      { text: '"第一次用财务软件，我惊呆了！"', tags: ['小红书', '抖音'], analysis: '初体验故事+惊喜' },
+      { text: '"从害怕做账到成为做账高手！"', tags: ['抖音', '公众号'], analysis: '成长故事+激励' },
+      { text: '"那些年，我们一起做过的账！"', tags: ['小红书', '抖音'], analysis: '集体回忆+共鸣' },
+      { text: '"财务人的24小时，你中了几条？"', tags: ['抖音', '小红书'], analysis: '日常生活+共鸣' },
+      { text: '"从Excel到ERP，我的进化史！"', tags: ['小红书', '公众号'], analysis: '工具进化故事' },
+      { text: '"做了5年会计，我想说说心里话！"', tags: ['抖音', '小红书'], analysis: '心声故事+共鸣' }
+    ]
+  },
+  {
+    category: '实用干货型',
+    icon: '📚',
+    titles: [
+      { text: '"会计人必学的5个Excel技巧！"', tags: ['小红书', '抖音'], analysis: '技能清单+实用性' },
+      { text: '"做账完整流程，新手必看！"', tags: ['抖音', '公众号'], analysis: '流程指南+新手友好' },
+      { text: '"财务报表模板，直接套用！"', tags: ['小红书', '公众号'], analysis: '模板分享+实用性' },
+      { text: '"进销存管理实操教程，一看就会！"', tags: ['抖音', '小红书'], analysis: '实操教程+易学' },
+      { text: '"报税流程详解，再也不怕税务局！"', tags: ['公众号', '小红书'], analysis: '流程详解+实用' },
+      { text: '"库存管理的10个实用技巧！"', tags: ['抖音', '小红书'], analysis: '技巧清单+实用' },
+      { text: '"财务软件快捷键大全，效率翻倍！"', tags: ['小红书', '抖音'], analysis: '工具技巧+效率' },
+      { text: '"做账常见错误及解决方案！"', tags: ['抖音', '公众号'], analysis: '问题解决+实用' },
+      { text: '"财务分析模板，直接用！"', tags: ['小红书', '公众号'], analysis: '模板分享+实用' },
+      { text: '"ERP系统操作手册，新手必备！"', tags: ['抖音', '小红书'], analysis: '操作指南+新手' },
+      { text: '"出纳工作规范，一看就懂！"', tags: ['小红书', '抖音'], analysis: '规范指南+易懂' },
+      { text: '"做账顺序详解，新手必收藏！"', tags: ['抖音', '公众号'], analysis: '流程详解+收藏' },
+      { text: '"财务软件设置指南，一看就会！"', tags: ['小红书', '抖音'], analysis: '设置指南+易学' },
+      { text: '"做账技巧大全，会计人必备！"', tags: ['抖音', '小红书'], analysis: '技巧集合+全面' },
+      { text: '"财务报表分析方法，老板必看！"', tags: ['公众号', '小红书'], analysis: '分析方法+目标用户' },
+      { text: '"进销存系统设置教程，一看就会！"', tags: ['抖音', '小红书'], analysis: '设置教程+易学' },
+      { text: '"报税时间表，再也不怕错过！"', tags: ['小红书', '抖音'], analysis: '时间管理+实用' },
+      { text: '"财务软件数据备份方法，必看！"', tags: ['抖音', '公众号'], analysis: '数据安全+实用' },
+      { text: '"做账凭证模板，直接下载！"', tags: ['小红书', '抖音'], analysis: '模板分享+实用' },
+      { text: '"财务软件常见问题解答！"', tags: ['抖音', '小红书'], analysis: 'FAQ+实用' }
+    ]
+  },
+  {
+    category: '权威背书型',
+    icon: '🏆',
+    titles: [
+      { text: '"15年财务总监推荐：这3款软件最好用！"', tags: ['小红书', '公众号'], analysis: '资历+推荐' },
+      { text: '"四大审计师都在用的财务工具！"', tags: ['公众号', '小红书'], analysis: '权威背书+从众' },
+      { text: '"税务局认可的做账方法！"', tags: ['小红书', '抖音'], analysis: '官方背书+信任' },
+      { text: '"500强企业都在用的ERP系统！"', tags: ['公众号', '抖音'], analysis: '大企业背书' },
+      { text: '"注册会计师推荐的财务软件！"', tags: ['小红书', '公众号'], analysis: '专业资格背书' },
+      { text: '"财务专家教你如何选对软件！"', tags: ['抖音', '小红书'], analysis: '专家背书+指导' },
+      { text: '"上市公司都在用的财务系统！"', tags: ['小红书', '公众号'], analysis: '上市公司背书' },
+      { text: '"10年老会计推荐的做账软件！"', tags: ['抖音', '小红书'], analysis: '经验背书+推荐' },
+      { text: '"财务经理都在用的效率工具！"', tags: ['小红书', '抖音'], analysis: '管理层背书' },
+      { text: '"税务局指定的报税软件！"', tags: ['公众号', '小红书'], analysis: '官方背书+信任' },
+      { text: '"会计培训机构推荐的学习软件！"', tags: ['抖音', '小红书'], analysis: '机构背书+学习' },
+      { text: '"财务顾问推荐的管理工具！"', tags: ['小红书', '公众号'], analysis: '顾问背书+专业' },
+      { text: '"行业大佬都在用的财务系统！"', tags: ['抖音', '小红书'], analysis: '大佬背书+从众' },
+      { text: '"财务软件排行榜第一名！"', tags: ['小红书', '抖音'], analysis: '排名背书+权威' },
+      { text: '"会计协会推荐的做账软件！"', tags: ['公众号', '小红书'], analysis: '协会背书+权威' },
+      { text: '"财务专家亲测：这款软件最好用！"', tags: ['抖音', '小红书'], analysis: '亲测背书+信任' },
+      { text: '"大厂财务都在用的效率工具！"', tags: ['小红书', '抖音'], analysis: '大厂背书+从众' },
+      { text: '"财务总监私藏的5个工具！"', tags: ['抖音', '公众号'], analysis: '私藏+好奇心' },
+      { text: '"会计考试培训机构推荐的软件！"', tags: ['小红书', '抖音'], analysis: '机构背书+学习' },
+      { text: '"财务软件用户好评率99%！"', tags: ['小红书', '公众号'], analysis: '用户口碑背书' }
+    ]
+  },
+  {
+    category: '热点话题型',
+    icon: '🔥',
+    titles: [
+      { text: '"金税四期来了！这些做账习惯必须改！"', tags: ['小红书', '公众号'], analysis: '税务热点+紧迫性' },
+      { text: '"AI冲击下，会计人如何保住饭碗？"', tags: ['抖音', '小红书'], analysis: 'AI热点+职业焦虑' },
+      { text: '"2026年最值得入手的财务软件！"', tags: ['小红书', '抖音'], analysis: '年度热点+推荐' },
+      { text: '"中小企业数字化转型，从财务开始！"', tags: ['公众号', '小红书'], analysis: '数字化热点+指导' },
+      { text: '"电商大促！进销存系统这样用才高效！"', tags: ['抖音', '小红书'], analysis: '电商热点+效率' },
+      { text: '"毕业季！会计新人求职必备技能！"', tags: ['小红书', '抖音'], analysis: '毕业季热点+技能' },
+      { text: '"ChatGPT能替代会计吗？深度分析！"', tags: ['公众号', '抖音'], analysis: 'AI热点+分析' },
+      { text: '"智能财务时代来了！你准备好了吗？"', tags: ['小红书', '抖音'], analysis: '技术趋势+准备' },
+      { text: '"2026年财务软件排行榜出炉！"', tags: ['抖音', '公众号'], analysis: '年度热点+排名' },
+      { text: '"数字化转型，财务人怎么跟上？"', tags: ['小红书', '抖音'], analysis: '转型热点+指导' },
+      { text: '"AI做账时代，传统会计怎么办？"', tags: ['抖音', '小红书'], analysis: 'AI热点+转型' },
+      { text: '"智能ERP系统，2026年最火！"', tags: ['小红书', '公众号'], analysis: '产品热点+推荐' },
+      { text: '"财务共享中心，你了解吗？"', tags: ['公众号', '抖音'], analysis: '概念热点+科普' },
+      { text: '"RPA财务自动化，你用上了吗？"', tags: ['小红书', '抖音'], analysis: '技术热点+应用' },
+      { text: '"区块链+财务，未来趋势！"', tags: ['抖音', '公众号'], analysis: '技术热点+趋势' },
+      { text: '"云计算财务软件，为什么这么火？"', tags: ['小红书', '抖音'], analysis: '技术热点+原因' },
+      { text: '"大数据财务分析，你学会了吗？"', tags: ['抖音', '小红书'], analysis: '技术热点+学习' },
+      { text: '"移动办公时代，财务软件怎么选？"', tags: ['小红书', '公众号'], analysis: '办公热点+选择' },
+      { text: '"无纸化办公，财务怎么做？"', tags: ['抖音', '小红书'], analysis: '环保热点+实践' },
+      { text: '"2026年财务行业十大趋势！"', tags: ['小红书', '抖音'], analysis: '年度趋势+预测' }
+    ]
+  }
+];
+
+// ============================================================
+// 标题推荐渲染
+// ============================================================
+function renderTitlesPage(filterCategory) {
+  const container = document.getElementById('titleRecommendations');
+  const filterTabs = document.getElementById('titleFilterTabs');
+  const countEl = document.getElementById('titleFilterCount');
+  const dateEl = document.getElementById('titleDate');
+  if (!container) return;
+
+  // 更新日期
+  if (dateEl) {
+    const now = new Date();
+    const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
+    const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    dateEl.textContent = `📅 ${dateStr} ${weekdays[now.getDay()]} · 基于爆款公式，为你推荐不同角度的吸睛标题`;
+  }
+
+  // 初始化筛选标签
+  if (filterTabs && !filterTabs.hasChildNodes()) {
+    const allCount = TITLE_DATA.reduce((sum, cat) => sum + cat.titles.length, 0);
+    const allTab = document.createElement('button');
+    allTab.className = 'title-filter-tab active';
+    allTab.dataset.category = 'all';
+    allTab.textContent = `全部（${allCount}）`;
+    allTab.onclick = () => filterTitlesByCategory('all');
+    filterTabs.appendChild(allTab);
+
+    TITLE_DATA.forEach(cat => {
+      const tab = document.createElement('button');
+      tab.className = 'title-filter-tab';
+      tab.dataset.category = cat.category;
+      tab.textContent = `${cat.icon} ${cat.category}`;
+      tab.onclick = () => filterTitlesByCategory(cat.category);
+      filterTabs.appendChild(tab);
+    });
+  }
+
+  // 更新标签激活状态
+  if (filterTabs) {
+    filterTabs.querySelectorAll('.title-filter-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.category === (filterCategory || 'all'));
+    });
+  }
+
+  // 筛选数据（每日轮换）
+  const filteredData = filterCategory && filterCategory !== 'all' 
+    ? TITLE_DATA.filter(cat => cat.category === filterCategory)
+    : TITLE_DATA;
+
+  // 计算总数
+  const totalCount = filteredData.reduce((sum, cat) => sum + cat.titles.length, 0);
+  if (countEl) {
+    countEl.textContent = `今日推荐 ${totalCount} 个标题`;
+  }
+
+  container.innerHTML = filteredData.map(cat => {
+    const dailyTitles = seededShuffle(cat.titles, getDateSeed() + cat.category.length);
+    return `
+    <div class="title-category">
+      <div class="title-category-header">
+        <span class="title-category-icon">${cat.icon}</span>
+        <span class="title-category-name">${cat.category}</span>
+        <span class="title-category-count">${dailyTitles.length} 个标题</span>
+      </div>
+      <div class="title-list">
+        ${dailyTitles.map((t, i) => `
+          <div class="title-item">
+            <div class="title-item-text">${t.text}</div>
+            ${t.analysis ? `<div class="title-analysis">💡 ${t.analysis}</div>` : ''}
+            <div class="title-item-meta">
+              <div class="title-item-tags">
+                ${t.tags.map(tag => `<span class="title-tag">${tag}</span>`).join('')}
+              </div>
+              <button class="title-item-copy" data-title="${encodeURIComponent(t.text)}" onclick="copyTitle(this.dataset.title)">复制</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `}).join('');
+}
+
+function filterTitlesByCategory(category) {
+  renderTitlesPage(category);
+}
+
+function copyTitle(encodedText) {
+  const text = decodeURIComponent(encodedText);
+  navigator.clipboard.writeText(text).then(() => {
+    // 显示复制成功提示
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+    toast.textContent = '✅ 已复制到剪贴板';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
+  }).catch(err => {
+    // 如果clipboard API失败，使用备用方法
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+    toast.textContent = '✅ 已复制到剪贴板';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
+  });
+}
+
+function exportTitlesToExcel() {
+  // 准备数据
+  let csvContent = '\uFEFF'; // BOM for UTF-8
+  csvContent += '分类,标题,适用平台,分析说明\n';
+  
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  
+  TITLE_DATA.forEach(cat => {
+    cat.titles.forEach(t => {
+      const title = t.text.replace(/"/g, '""');
+      const tags = t.tags.join('、');
+      const analysis = (t.analysis || '').replace(/"/g, '""');
+      csvContent += `"${cat.category}","${title}","${tags}","${analysis}"\n`;
+    });
+  });
+  
+  // 创建下载链接
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `标题推荐_${dateStr}.csv`;
+  link.click();
+  
+  // 显示导出成功提示
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#10B981;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;';
+  toast.textContent = '✅ 导出成功！';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 1500);
+  
+  URL.revokeObjectURL(url);
+}
+
+const ANALYSIS_INSIGHTS = [
+  {
+    icon: '📈',
+    title: '趋势分析',
+    content: '6月是企业半年度盘点期，财务软件、ERP系统相关内容搜索量上升30%+。建议围绕"年中盘点"、"半年报"等话题创作内容。'
+  },
+  {
+    icon: '🎯',
+    title: '平台策略',
+    content: '小红书适合种草测评类（图文为主），抖音适合实操教程类（短视频），公众号适合深度分析类（长文）。根据平台特性选择内容形式。'
+  },
+  {
+    icon: '⏰',
+    title: '发布时间',
+    content: '工作日12:00-14:00（午休时间）和20:00-22:00（晚间）是财务类内容的黄金发布时段。周末可发布轻松类内容。'
+  },
+  {
+    icon: '💡',
+    title: '选题建议',
+    content: '结合当前热点：毕业季（出纳/会计求职）、618电商节（进销存/库存管理）、企业半年报（财务软件/ERP），选择对应角度创作。'
+  }
+];
+
+// ============================================================
+// 选题方向渲染
+// ============================================================
+function renderTopicPage() {
+  // 更新日期
+  const dateEl = document.getElementById('topicDate');
+  if (dateEl) {
+    const now = new Date();
+    dateEl.textContent = `📅 ${now.getMonth() + 1}月${now.getDate()}日 推荐`;
+  }
+
+  // 概览统计
+  const overviewEl = document.getElementById('topicOverview');
+  if (overviewEl) {
+    overviewEl.innerHTML = `
+      <div class="topic-stat">
+        <div class="topic-stat-icon fire">🔥</div>
+        <div class="topic-stat-content">
+          <div class="topic-stat-value">9</div>
+          <div class="topic-stat-label">今日推荐选题</div>
+          <div class="topic-stat-desc">精选热门选题，助力内容创作</div>
+        </div>
+      </div>
+      <div class="topic-stat">
+        <div class="topic-stat-icon chart">📊</div>
+        <div class="topic-stat-content">
+          <div class="topic-stat-value">3</div>
+          <div class="topic-stat-label">覆盖平台</div>
+          <div class="topic-stat-desc">多平台覆盖，提升内容影响力</div>
+        </div>
+      </div>
+      <div class="topic-stat">
+        <div class="topic-stat-icon star">⭐</div>
+        <div class="topic-stat-content">
+          <div class="topic-stat-value">11</div>
+          <div class="topic-stat-label">覆盖标签</div>
+          <div class="topic-stat-desc">多维标签覆盖，精准触达用户</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // 各平台选题
+  const platformsEl = document.getElementById('topicPlatforms');
+  if (platformsEl) {
+    const platforms = [
+      { key: 'xiaohongshu', name: '小红书选题', icon: '📕', dotClass: 'xhs' },
+      { key: 'douyin', name: '抖音选题', icon: '🎵', dotClass: 'dy' },
+      { key: 'wechat', name: '公众号选题', icon: '💬', dotClass: 'wx' }
+    ];
+
+    platformsEl.innerHTML = platforms.map(p => {
+      const dailyTopics = getDailyTopics(p.key);
+      return `
+      <div class="topic-platform-card">
+        <div class="topic-platform-header">
+          <div class="topic-platform-title">
+            <span class="dot ${p.dotClass}"></span>
+            ${p.icon} ${p.name}
+          </div>
+          <span class="topic-platform-count">${dailyTopics.length} 个</span>
+        </div>
+        <div class="topic-list">
+          ${dailyTopics.map(t => `
+            <div class="topic-item">
+              <div class="topic-item-header">
+                <div class="topic-item-title">${t.title}</div>
+                <span class="topic-item-badge ${t.type}">${t.type === 'hot' ? '🔥 热门' : t.type === 'trending' ? '📈 上升' : '✨ 新锐'}</span>
+              </div>
+              <div class="topic-item-desc">${t.desc}</div>
+              <div class="topic-item-tags">
+                <span class="topic-tag">${t.tag}</span>
+                <span class="topic-tag">${t.type === 'hot' ? '近期搜索量高' : t.type === 'trending' ? '季节性需求' : '新锐话题'}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `}).join('');
+  }
+
+  // 选题分析
+  const analysisEl = document.getElementById('topicAnalysis');
+  if (analysisEl) {
+    analysisEl.innerHTML = `
+      <div class="topic-analysis-header">
+        <div class="topic-analysis-title">📊 选题分析与建议</div>
+      </div>
+      <div class="topic-analysis-grid">
+        ${ANALYSIS_INSIGHTS.map(ins => `
+          <div class="analysis-card">
+            <div class="analysis-card-icon">${ins.icon}</div>
+            <div class="analysis-card-title">${ins.title}</div>
+            <div class="analysis-card-content">${ins.content}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+}
+
+// ============================================================
+// 问候语渲染
+// ============================================================
+function renderGreeting() {
+  const titleEl = document.getElementById('greetingTitle');
+  const subtitleEl = document.getElementById('greetingSubtitle');
+  if (!titleEl || !subtitleEl) return;
+
+  const now = new Date();
+  const hours = now.getHours();
+  let greeting = '你好';
+  if (hours < 6) greeting = '夜深了';
+  else if (hours < 9) greeting = '早上好';
+  else if (hours < 12) greeting = '上午好';
+  else if (hours < 14) greeting = '中午好';
+  else if (hours < 18) greeting = '下午好';
+  else greeting = '晚上好';
+
+  const dateStr = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`;
+  const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const weekday = weekdays[now.getDay()];
+
+  titleEl.textContent = `👋 ${greeting}，小白WU`;
+  subtitleEl.textContent = `今天是 ${dateStr} ${weekday}，AI 正在为你捕捉全网热点`;
+}
+
+// ============================================================
+// 趋势分析渲染
+// ============================================================
+function renderTrendingContent() {
+  const container = document.getElementById('trendingContent');
+  if (!container) return;
+
+  // 默认显示词云
+  renderKeywordCloud(container);
+
+  // 添加tab切换事件
+  document.querySelectorAll('.trending-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.trending-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      const tabType = tab.dataset.tab;
+      if (tabType === 'hot') renderHotTrend(container);
+      else if (tabType === 'platform') renderPlatformDist(container);
+      else if (tabType === 'keyword') renderKeywordCloud(container);
+    });
+  });
+}
+
+function renderHotTrend(container) {
+  const xhsData = getPlatformData('xiaohongshu');
+  const dyData = getPlatformData('douyin');
+  const wxData = getPlatformData('wechat');
+  
+  container.innerHTML = `
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">📕 小红书</div>
+        <div style="font-size: 28px; font-weight: 700; color: #FF2442;">${xhsData ? xhsData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">🎵 抖音</div>
+        <div style="font-size: 28px; font-weight: 700; color: #7C3AED;">${dyData ? dyData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+      <div style="text-align: center; padding: 20px; background: var(--bg); border-radius: 10px;">
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">💬 公众号</div>
+        <div style="font-size: 28px; font-weight: 700; color: #07C160;">${wxData ? wxData.items.length : 0}</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">内容总量</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlatformDist(container) {
+  const xhsCount = getPlatformData('xiaohongshu')?.items.length || 0;
+  const dyCount = getPlatformData('douyin')?.items.length || 0;
+  const wxCount = getPlatformData('wechat')?.items.length || 0;
+  const total = xhsCount + dyCount + wxCount;
+  
+  container.innerHTML = `
+    <div style="padding: 20px 0;">
+      <div style="display: flex; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+        <div style="width: ${total > 0 ? (xhsCount/total*100) : 33}%; background: #FF2442;"></div>
+        <div style="width: ${total > 0 ? (dyCount/total*100) : 33}%; background: #7C3AED;"></div>
+        <div style="width: ${total > 0 ? (wxCount/total*100) : 34}%; background: #07C160;"></div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 30px; font-size: 13px;">
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #FF2442; border-radius: 3px;"></span>小红书 ${xhsCount}条 (${total > 0 ? Math.round(xhsCount/total*100) : 33}%)</span>
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #7C3AED; border-radius: 3px;"></span>抖音 ${dyCount}条 (${total > 0 ? Math.round(dyCount/total*100) : 33}%)</span>
+        <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #07C160; border-radius: 3px;"></span>公众号 ${wxCount}条 (${total > 0 ? Math.round(wxCount/total*100) : 34}%)</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderKeywordCloud(container) {
+  // 全网热门关键词
+  const trendingKeywords = [
+    { text: '2026高考', weight: 100 },
+    { text: '芒种', weight: 95 },
+    { text: '油价调整', weight: 92 },
+    { text: '高考加油', weight: 90 },
+    { text: '奚梦瑶婚礼', weight: 88 },
+    { text: '中国小电驴', weight: 85 },
+    { text: '燃油车价格跳水', weight: 82 },
+    { text: '金饰降价', weight: 80 },
+    { text: '特朗普', weight: 78 },
+    { text: '泽连斯基', weight: 75 },
+    { text: 'AI对话', weight: 73 },
+    { text: '豆包', weight: 70 },
+    { text: '人形机器人', weight: 68 },
+    { text: '台风', weight: 65 },
+    { text: '高考倒计时', weight: 63 },
+    { text: '高考物品清单', weight: 60 },
+    { text: '股市', weight: 58 },
+    { text: '防晒', weight: 55 },
+    { text: '减肥', weight: 53 },
+    { text: '游泳', weight: 50 },
+    { text: '苹果折叠屏', weight: 48 },
+    { text: '英伟达', weight: 45 },
+    { text: '健身', weight: 43 },
+    { text: '心理健康', weight: 40 },
+    { text: '运动', weight: 38 },
+    { text: '高考', weight: 95 },
+    { text: '旅游', weight: 35 },
+    { text: '美食', weight: 33 },
+    { text: '护肤', weight: 30 },
+    { text: '穿搭', weight: 28 },
+    { text: '科技', weight: 25 },
+    { text: '新能源', weight: 23 },
+    { text: '直播', weight: 20 },
+    { text: '短视频', weight: 18 },
+    { text: '电商', weight: 15 },
+    { text: '职场', weight: 13 },
+    { text: '理财', weight: 10 }
+  ];
+
+  // 随机打乱顺序
+  const shuffled = [...trendingKeywords].sort(() => Math.random() - 0.5);
+
+  // 词云布局样式
+  container.innerHTML = `
+    <div class="word-cloud">
+      <div class="cloud-title">今日全网热点词云</div>
+      <div class="cloud-container">
+        ${shuffled.map((kw, i) => {
+          const size = 10 + (kw.weight / 100) * 22;
+          const colors = ['#1E40AF', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#7C3AED', '#8B5CF6', '#A78BFA'];
+          const color = colors[i % colors.length];
+          const opacity = 0.6 + (kw.weight / 100) * 0.4;
+          return `<span class="cloud-word" style="font-size: ${size}px; color: ${color}; opacity: ${opacity}; font-weight: ${kw.weight > 70 ? '700' : kw.weight > 40 ? '500' : '400'};">${kw.text}</span>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================
+// 概览页渲染
+// ============================================================
+function renderOverview() {
+  const grid = document.getElementById('statsGrid');
+  const previews = document.getElementById('platformPreviews');
+  if (!grid || !previews) return;
+
+  // 渲染问候语
+  renderGreeting();
+
+  // 渲染趋势分析
+  renderTrendingContent();
+
+  const platforms = getAllPlatforms();
+  const icons = { xiaohongshu: '📕', douyin: '🎵', wechat: '💬' };
+  const iconCls = { xiaohongshu: 'xhs', douyin: 'dy', wechat: 'wx' };
+  const trendColors = { xiaohongshu: '#FF2442', douyin: '#7C3AED', wechat: '#07C160' };
+  const trends = [23, 18, 12];
+
+  // Stats cards
+  grid.innerHTML = platforms.map((k, i) => {
+    const data = getPlatformData(k);
+    if (!data) return '';
+    return `
+      <div class="stat-card">
+        <div class="stat-card-header">
+          <div class="stat-card-icon">
+            <div class="icon ${iconCls[k]}">${icons[k]}</div>
+            <span class="name">${data.platformName}</span>
+          </div>
+          <span class="stat-card-trend" style="color:${trendColors[k]};">↑ ${trends[i]}%</span>
+        </div>
+        <div class="stat-card-value">${data.items.length}</div>
+        <div class="stat-card-label">热门内容</div>
+        <div class="stat-card-footer">
+          <span class="change">较昨日新增 <span style="color:${trendColors[k]};font-weight:600;">${Math.floor(data.items.length * 0.18)}</span> 条</span>
+          <div class="mini-chart" id="miniChart${i}"></div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Mini charts
+  setTimeout(() => {
+    renderMiniChart('miniChart0', [65, 72, 85, 78, 82, 90, 85], 'xhs');
+    renderMiniChart('miniChart1', [50, 58, 70, 62, 68, 75, 70], 'dy');
+    renderMiniChart('miniChart2', [35, 42, 55, 48, 52, 58, 55], 'wx');
+  }, 100);
+
+  // Content Analysis
+  renderContentAnalysis();
+
+  // Content previews
+  const labels = { xiaohongshu: '小红书热门内容', douyin: '抖音热门内容', wechat: '公众号热门内容' };
+  previews.innerHTML = platforms.map(k => {
+    const data = getPlatformData(k);
+    if (!data) return '';
+    return `
+      <div class="content-column">
+        <div class="content-column-header">
+          <div class="content-column-title">
+            <span class="dot ${k === 'xiaohongshu' ? 'xhs' : k === 'douyin' ? 'dy' : 'wx'}"></span>
+            ${labels[k]}
+          </div>
+          <span class="content-column-count" style="cursor:pointer;color:#7C3AED;" onclick="switchPage('${k}')">${data.items.length}条 > 查看更多</span>
+        </div>
+        ${data.items.slice(0, 5).map(item => {
+          return `
+          <div class="content-item" onclick="window.open('${item.url}','_blank')">
+            <div class="content-item-thumb">${icons[k]}</div>
+            <div class="content-item-body">
+              <div class="content-item-title">${item.title}</div>
+              <div class="content-item-meta">
+                <span class="content-item-tag">${item.tag || ''}</span>
+                <span>${item.author || ''}</span>
+              </div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// 平台页面渲染
+// ============================================================
+function renderPlatform(platform) {
+  const data = getPlatformData(platform);
+  const listId = { xiaohongshu: 'xhsList', douyin: 'dyList', wechat: 'wxList' }[platform];
+  const statsId = { xiaohongshu: 'xhsStats', douyin: 'dyStats', wechat: 'wxStats' }[platform];
+
+  const listEl = document.getElementById(listId);
+  const statsEl = document.getElementById(statsId);
+  if (!listEl) return;
+
+  if (!data || !data.items || data.items.length === 0) {
+    if (statsEl) statsEl.innerHTML = '';
+    listEl.innerHTML = '<div class="coming-soon"><div class="coming-soon-icon">📭</div><h2>暂无数据</h2></div>';
+    return;
+  }
+
+  if (statsEl) {
+    statsEl.innerHTML = `
+      <div class="banner-stat"><div class="banner-stat-value">${data.items.length}</div><div class="banner-stat-label">内容条数</div></div>
+      <div class="banner-stat"><div class="banner-stat-value">${data.source}</div><div class="banner-stat-label">数据来源</div></div>`;
+  }
+
+  listEl.innerHTML = data.items.map((item, i) => {
+    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    return `
+      <div class="content-card" onclick="window.open('${item.url}','_blank')">
+        <div class="rank-badge ${rankClass}">${i + 1}</div>
+        <div class="content-card-body">
+          <div class="content-card-title">${item.title}</div>
+          <div class="content-card-meta">
+            <span>${item.author || ''}</span>
+            <span class="content-item-tag">${item.tag || ''}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// 页面切换
+// ============================================================
+function switchPage(platform) {
+  currentPage = platform;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const page = document.getElementById('page-' + platform);
+  if (page) page.classList.add('active');
+
+  const nav = document.querySelector(`.nav-item[data-platform="${platform}"]`);
+  if (nav) nav.classList.add('active');
+
+  if (platform === 'all') {
+    renderOverview();
+  } else if (platform === 'analytics') {
+    renderTopicPage();
+  } else if (platform === 'titles') {
+    renderTitlesPage();
+  } else {
+    renderPlatform(platform);
+  }
+
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+// ============================================================
+// 搜索
+// ============================================================
+function initSearch() {
+  const input = document.getElementById('searchInput');
+  if (!input) return;
+
+  input.addEventListener('input', e => {
+    const query = e.target.value.trim().toLowerCase();
+    if (!query) { render(); return; }
+
+    const results = [];
+    getAllPlatforms().forEach(k => {
+      const data = getPlatformData(k);
+      if (!data) return;
+      data.items.forEach(item => {
+        if (item.title.toLowerCase().includes(query) || (item.tag && item.tag.toLowerCase().includes(query))) {
+          results.push({ ...item, platform: k, platformName: data.platformName });
+        }
+      });
+    });
+
+    showSearchResults(results, query);
+  });
+}
+
+function showSearchResults(results, query) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-all').classList.add('active');
+
+  const grid = document.getElementById('statsGrid');
+  const previews = document.getElementById('platformPreviews');
+
+  grid.innerHTML = `
+    <div class="stat-card" style="grid-column:1/-1;text-align:center;padding:32px;">
+      <div class="stat-card-label">搜索 "${query}"</div>
+      <div class="stat-card-value">找到 ${results.length} 条结果</div>
+    </div>`;
+
+  if (results.length === 0) {
+    previews.innerHTML = '<div class="coming-soon"><div class="coming-soon-icon">🔍</div><h2>未找到相关内容</h2></div>';
+    return;
+  }
+
+  previews.innerHTML = `
+    <div class="content-columns" style="grid-template-columns:1fr;">
+      <div class="content-column">
+        <div class="content-column-header">
+          <div class="content-column-title">搜索结果</div>
+        </div>
+        ${results.map(item => `
+          <div class="content-item" onclick="window.open('${item.url}','_blank')">
+            <div class="content-item-thumb">🔍</div>
+            <div class="content-item-body">
+              <div class="content-item-title">${item.title}</div>
+              <div class="content-item-meta">
+                <span class="content-item-tag">${item.tag || ''}</span>
+                <span>${item.platformName || ''}</span>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+// ============================================================
+// ============================================================
+// 通知系统
+// ============================================================
+const NOTIFICATION_KEY = 'newmedia_notifications';
+
+function getNotifications() {
+  try {
+    return JSON.parse(localStorage.getItem(NOTIFICATION_KEY) || '[]');
+  } catch {
+    return [];
+  }
+}
+
+function saveNotifications(notifications) {
+  localStorage.setItem(NOTIFICATION_KEY, JSON.stringify(notifications));
+}
+
+function addNotification(type, message) {
+  const notifications = getNotifications();
+  notifications.unshift({
+    id: Date.now(),
+    type: type,
+    message: message,
+    time: new Date().toISOString(),
+    read: false
+  });
+  // 最多保留20条通知
+  if (notifications.length > 20) notifications.length = 20;
+  saveNotifications(notifications);
+  updateNotificationBadge();
+}
+
+function markAllRead() {
+  const notifications = getNotifications();
+  notifications.forEach(n => n.read = true);
+  saveNotifications(notifications);
+  updateNotificationBadge();
+}
+
+function clearAllNotifications() {
+  saveNotifications([]);
+  updateNotificationBadge();
+  renderNotificationList();
+}
+
+function updateNotificationBadge() {
+  const badge = document.getElementById('notificationBadge');
+  if (!badge) return;
+  const unread = getNotifications().filter(n => !n.read).length;
+  if (unread > 0) {
+    badge.textContent = unread > 9 ? '9+' : unread;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function renderNotificationList() {
+  const list = document.getElementById('notificationList');
+  if (!list) return;
+  const notifications = getNotifications();
+  if (notifications.length === 0) {
+    list.innerHTML = '<div class="notification-empty">暂无通知</div>';
+    return;
+  }
+  list.innerHTML = notifications.map(n => {
+    const time = formatNotificationTime(n.time);
+    const icon = n.type === 'refresh' ? '🔄' : n.type === 'update' ? '📊' : '📢';
+    return `
+      <div class="notification-item ${n.read ? '' : 'unread'}">
+        <div class="notification-icon">${icon}</div>
+        <div class="notification-body">
+          <div class="notification-text">${n.message}</div>
+          <div class="notification-time">${time}</div>
+        </div>
+        ${n.read ? '' : '<div class="notification-dot"></div>'}
+      </div>
+    `;
+  }).join('');
+}
+
+function formatNotificationTime(isoString) {
+  const date = new Date(isoString);
+  const now = new Date();
+  const diff = now - date;
+  const minutes = Math.floor(diff / 60000);
+  const hours = Math.floor(diff / 3600000);
+  const days = Math.floor(diff / 86400000);
+  
+  if (minutes < 1) return '刚刚';
+  if (minutes < 60) return `${minutes}分钟前`;
+  if (hours < 24) return `${hours}小时前`;
+  if (days < 7) return `${days}天前`;
+  return date.toLocaleDateString('zh-CN');
+}
+
+function initNotifications() {
+  const btn = document.getElementById('btnNotification');
+  const dropdown = document.getElementById('notificationDropdown');
+  const clearBtn = document.getElementById('clearNotifications');
+  
+  if (btn && dropdown) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('show');
+      if (dropdown.classList.contains('show')) {
+        renderNotificationList();
+        markAllRead();
+      }
+    });
+    
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('show');
+    });
+    
+    dropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+  
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      clearAllNotifications();
+    });
+  }
+  
+  // 更新徽章
+  updateNotificationBadge();
+  
+  // 检查是否需要添加自动更新通知
+  checkAutoRefreshNotification();
+}
+
+function checkAutoRefreshNotification() {
+  const lastCheck = localStorage.getItem('lastNotificationCheck');
+  const now = new Date();
+  
+  // 如果是新的一天，添加每日更新通知
+  if (!lastCheck || new Date(lastCheck).toDateString() !== now.toDateString()) {
+    const xhsData = getPlatformData('xiaohongshu');
+    const dyData = getPlatformData('douyin');
+    const wxData = getPlatformData('wechat');
+    
+    if (xhsData && dyData && wxData) {
+      addNotification('update', `数据已更新：小红书${xhsData.items.length}条、抖音${dyData.items.length}条、公众号${wxData.items.length}条`);
+    }
+    
+    localStorage.setItem('lastNotificationCheck', now.toISOString());
+  }
+}
+
+// 小红书搜索
+// ============================================================
+function searchXHS() {
+  const input = document.getElementById('xhsSearchInput');
+  const kw = input ? input.value.trim() : '';
+  if (kw) {
+    window.open('https://www.xiaohongshu.com/search_result?keyword=' + encodeURIComponent(kw), '_blank');
+  }
+}
+
+// ============================================================
+// 初始化
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const platform = item.dataset.platform;
+      if (platform && !item.classList.contains('disabled')) {
+        switchPage(platform);
+      }
+    });
+  });
+
+  const menuToggle = document.getElementById('menuToggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  }
+
+  const mainContent = document.getElementById('mainContent');
+  if (mainContent) {
+    mainContent.addEventListener('click', () => {
+      document.getElementById('sidebar').classList.remove('open');
+    });
+  }
+
+  const xhsInput = document.getElementById('xhsSearchInput');
+  if (xhsInput) {
+    xhsInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') searchXHS();
+    });
+  }
+
+  initSearch();
+  renderOverview();
+
+  // 初始化通知系统
+  initNotifications();
+
+  // 更新侧边栏数字
+  const xhsData = getPlatformData('xiaohongshu');
+  const dyData = getPlatformData('douyin');
+  const wxData = getPlatformData('wechat');
+  if (xhsData) document.getElementById('xhsBadge').textContent = xhsData.items.length;
+  if (dyData) document.getElementById('dyBadge').textContent = dyData.items.length;
+  if (wxData) document.getElementById('wxBadge').textContent = wxData.items.length;
+
+  // 设置数据更新日期
+  const updateDateEl = document.getElementById('dataUpdateDate');
+  if (updateDateEl) {
+    const now = new Date();
+    const dateStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    updateDateEl.textContent = dateStr;
+  }
+
+  // 用户下拉菜单
+  const userPill = document.getElementById('userPill');
+  const userDropdown = document.getElementById('userDropdown');
+  if (userPill && userDropdown) {
+    userPill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      userDropdown.classList.toggle('show');
+    });
+    document.addEventListener('click', () => {
+      userDropdown.classList.remove('show');
+    });
+    userDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // 主题切换
+  const themeLight = document.getElementById('themeLight');
+  const themeDark = document.getElementById('themeDark');
+  if (themeLight && themeDark) {
+    // 读取本地存储的主题
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeLight.classList.remove('active');
+      themeDark.classList.add('active');
+    }
+
+    themeLight.addEventListener('click', () => {
+      document.body.classList.remove('dark-mode');
+      themeLight.classList.add('active');
+      themeDark.classList.remove('active');
+      localStorage.setItem('theme', 'light');
+    });
+
+    themeDark.addEventListener('click', () => {
+      document.body.classList.add('dark-mode');
+      themeDark.classList.add('active');
+      themeLight.classList.remove('active');
+      localStorage.setItem('theme', 'dark');
+    });
+  }
+
+  // 读取保存的设置
+  const savedRefresh = localStorage.getItem('refreshInterval');
+  if (savedRefresh) document.getElementById('refreshInterval').value = savedRefresh;
+  const savedPageSize = localStorage.getItem('pageSize');
+  if (savedPageSize) document.getElementById('pageSize').value = savedPageSize;
+  const savedUsername = localStorage.getItem('username');
+  if (savedUsername) document.getElementById('usernameInput').value = savedUsername;
+  const savedEmail = localStorage.getItem('email');
+  if (savedEmail) document.getElementById('emailInput').value = savedEmail;
+
+  // 初始化自动刷新
+  initAutoRefresh(savedRefresh || '60');
+});
+
+// ============================================================
+// 自动刷新功能
+// ============================================================
+let autoRefreshTimer = null;
+
+function initAutoRefresh(interval) {
+  // 清除之前的定时器
+  if (autoRefreshTimer) {
+    clearInterval(autoRefreshTimer);
+    autoRefreshTimer = null;
+  }
+
+  // 如果设置了0（手动刷新），不启动定时器
+  if (interval === '0') {
+    console.log('[自动刷新] 已关闭');
+    return;
+  }
+
+  // 将分钟转换为毫秒
+  const minutes = parseInt(interval);
+  const ms = minutes * 60 * 1000;
+
+  console.log(`[自动刷新] 已启动，间隔 ${minutes} 分钟`);
+
+  autoRefreshTimer = setInterval(() => {
+    console.log('[自动刷新] 正在刷新数据...');
+    refreshData();
+  }, ms);
+}
+
+function refreshData() {
+  // 显示刷新提示
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:9999;animation:fadeIn 0.3s;';
+  toast.textContent = '🔄 正在刷新数据...';
+  document.body.appendChild(toast);
+
+  // 模拟数据刷新（实际应用中可以从API获取）
+  setTimeout(() => {
+    // 更新侧边栏数字
+    const xhsData = getPlatformData('xiaohongshu');
+    const dyData = getPlatformData('douyin');
+    const wxData = getPlatformData('wechat');
+    if (xhsData) document.getElementById('xhsBadge').textContent = xhsData.items.length;
+    if (dyData) document.getElementById('dyBadge').textContent = dyData.items.length;
+    if (wxData) document.getElementById('wxBadge').textContent = wxData.items.length;
+
+    // 重新渲染当前页面
+    if (currentPage === 'all') {
+      renderOverview();
+    } else {
+      renderPlatform(currentPage);
+    }
+
+    // 更新刷新时间
+    const updateDateEl = document.getElementById('dataUpdateDate');
+    if (updateDateEl) {
+      const now = new Date();
+      updateDateEl.textContent = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    }
+
+    // 添加刷新通知
+    const now = new Date();
+    const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+    addNotification('refresh', `数据刷新完成 ${timeStr}，小红书${xhsData?.items.length || 0}条、抖音${dyData?.items.length || 0}条、公众号${wxData?.items.length || 0}条`);
+
+    // 移除提示
+    toast.textContent = '✅ 数据已更新';
+    setTimeout(() => toast.remove(), 2000);
+
+    console.log('[自动刷新] 数据刷新完成');
+  }, 1000);
+}
+
+// ============================================================
+// 日期选择器
+// ============================================================
+let currentRange = '7d';
+let customStartDate = null;
+let customEndDate = null;
+
+function toggleDatePicker() {
+  const dropdown = document.getElementById('datePickerDropdown');
+  dropdown.classList.toggle('show');
+}
+
+function setDateRange(range) {
+  currentRange = range;
+  // 更新预设按钮状态
+  document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // 更新显示文本
+  const rangeText = document.getElementById('dateRangeText');
+  const texts = { '7d': '近 7 天', '30d': '近 30 天', '90d': '近 90 天', 'all': '全部' };
+  rangeText.textContent = texts[range] || range;
+
+  // 设置自定义日期
+  const today = new Date();
+  const endStr = today.toISOString().split('T')[0];
+  document.getElementById('endDate').value = endStr;
+
+  if (range === '7d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 7);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else if (range === '30d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 30);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else if (range === '90d') {
+    const start = new Date(today);
+    start.setDate(start.getDate() - 90);
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+  } else {
+    document.getElementById('startDate').value = '2026-01-01';
+  }
+}
+
+function updateCustomRange() {
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+  if (start && end) {
+    document.getElementById('dateRangeText').textContent = start + ' ~ ' + end;
+    document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+  }
+}
+
+function applyDateRange() {
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+
+  // 根据日期范围筛选内容
+  filterContentByDate(start, end);
+
+  toggleDatePicker();
+  showToast('日期范围已更新');
+}
+
+function filterContentByDate(startDate, endDate) {
+  // 重新渲染内容，模拟不同日期的内容
+  renderOverview();
+}
+
+// 点击其他区域关闭日期选择器
+document.addEventListener('click', (e) => {
+  const picker = document.getElementById('datePickerDropdown');
+  const badge = document.getElementById('dateBadge');
+  if (picker && badge && !picker.contains(e.target) && !badge.contains(e.target)) {
+    picker.classList.remove('show');
+  }
+});
+function openSettings() {
+  document.getElementById('userDropdown').classList.remove('show');
+  document.getElementById('settingsModal').classList.add('show');
+}
+
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('show');
+}
+
+function setTheme(theme) {
+  const btns = document.querySelectorAll('#settingsModal .theme-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  document.querySelector(`#settingsModal .theme-btn[data-theme="${theme}"]`).classList.add('active');
+
+  // 同步顶部下拉菜单
+  const topBtns = document.querySelectorAll('#themeLight, #themeDark');
+  topBtns.forEach(b => b.classList.remove('active'));
+
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('themeDark').classList.add('active');
+  } else {
+    document.body.classList.remove('dark-mode');
+    document.getElementById('themeLight').classList.add('active');
+  }
+  localStorage.setItem('theme', theme);
+}
+
+function saveSettings() {
+  const refreshInterval = document.getElementById('refreshInterval').value;
+  localStorage.setItem('refreshInterval', refreshInterval);
+  localStorage.setItem('pageSize', document.getElementById('pageSize').value);
+  localStorage.setItem('username', document.getElementById('usernameInput').value);
+  localStorage.setItem('email', document.getElementById('emailInput').value);
+
+  // 更新用户名显示
+  const username = document.getElementById('usernameInput').value;
+  if (username) {
+    document.querySelectorAll('.user-pill span, .dropdown-name').forEach(el => {
+      el.textContent = username;
+    });
+  }
+
+  // 应用自动刷新设置
+  initAutoRefresh(refreshInterval);
+
+  closeSettings();
+  showToast('设置已保存');
+}
+
+// ============================================================
+// 帮助中心
+// ============================================================
+function openHelp() {
+  document.getElementById('userDropdown').classList.remove('show');
+  document.getElementById('helpModal').classList.add('show');
+}
+
+function closeHelp() {
+  document.getElementById('helpModal').classList.remove('show');
+}
+
+function switchHelpTab(tab) {
+  document.querySelectorAll('.help-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.help-tab[onclick="switchHelpTab('${tab}')"]`).classList.add('active');
+
+  document.getElementById('helpGuide').style.display = tab === 'guide' ? 'block' : 'none';
+  document.getElementById('helpFaq').style.display = tab === 'faq' ? 'block' : 'none';
+  document.getElementById('helpAbout').style.display = tab === 'about' ? 'block' : 'none';
+}
+
+// ============================================================
+// Toast 提示
+// ============================================================
+function showToast(msg) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.style.cssText = 'position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;z-index:9999;transition:opacity 0.3s;opacity:0;pointer-events:none;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = '1';
+  setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+}

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新媒体数据平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon">H</div>
+        <div>
+          <div class="logo-text">AI新媒体平台</div>
+          <div class="logo-sub">智能内容聚合与分析</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">数据平台</div>
+      <a class="nav-item active" data-platform="all">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">数据概览</span>
+      </a>
+      <a class="nav-item" data-platform="xiaohongshu">
+        <span class="nav-icon xhs-icon">📕</span>
+        <span class="nav-label">小红书</span>
+        <span class="nav-badge xhs-badge" id="xhsBadge">0</span>
+      </a>
+      <a class="nav-item" data-platform="douyin">
+        <span class="nav-icon dy-icon">🎵</span>
+        <span class="nav-label">抖音</span>
+        <span class="nav-badge dy-badge" id="dyBadge">0</span>
+      </a>
+      <a class="nav-item" data-platform="wechat">
+        <span class="nav-icon wx-icon">💬</span>
+        <span class="nav-label">公众号</span>
+        <span class="nav-badge wx-badge" id="wxBadge">0</span>
+      </a>
+      <a class="nav-item" data-platform="comments">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">评论区分析</span>
+        <span class="nav-tag">NEW</span>
+      </a>
+
+      <div class="nav-section-title">工具</div>
+      <a class="nav-item" data-platform="poster" onclick="window.open('/poster.html', '_blank')">
+        <span class="nav-icon">🎨</span>
+        <span class="nav-label">海报生成</span>
+      </a>
+      <a class="nav-item" data-platform="analytics" onclick="switchPage('analytics')">
+        <span class="nav-icon">💡</span>
+        <span class="nav-label">选题方向</span>
+        <span class="nav-tag">NEW</span>
+      </a>
+      <a class="nav-item" data-platform="titles" onclick="switchPage('titles')">
+        <span class="nav-icon">📝</span>
+        <span class="nav-label">标题推荐</span>
+        <span class="nav-tag">NEW</span>
+      </a>
+      <a class="nav-item" data-platform="copywriter" onclick="switchPage('copywriter')">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">文案生成</span>
+        <span class="nav-tag">NEW</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="membership-info">
+        <div class="membership-label">数据更新</div>
+        <div class="membership-date" id="dataUpdateDate">2026-06-01</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content" id="mainContent">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="搜索热门内容、作者、标签..." id="searchInput">
+      </div>
+      <div class="top-actions">
+        <button class="btn-icon" id="btnFullscreen" title="全屏">⛶</button>
+        <button class="btn-icon" id="btnRefresh" title="刷新数据">↻</button>
+        <div class="notification-wrap">
+          <button class="btn-icon notification-btn" id="btnNotification" title="通知">🔔</button>
+          <span class="notification-badge" id="notificationBadge" style="display:none;">0</span>
+          <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">
+              <span class="notification-title">通知消息</span>
+              <button class="notification-clear" id="clearNotifications">清除全部</button>
+            </div>
+            <div class="notification-list" id="notificationList">
+              <div class="notification-empty">暂无通知</div>
+            </div>
+          </div>
+        </div>
+        <div class="user-pill" id="userPill">
+          <div class="user-avatar">👤</div>
+          <span>小白WU</span>
+        </div>
+        <!-- 用户下拉菜单 -->
+        <div class="user-dropdown" id="userDropdown">
+          <div class="dropdown-header">
+            <div class="dropdown-avatar">👤</div>
+            <div class="dropdown-info">
+              <div class="dropdown-name">小白WU</div>
+              <div class="dropdown-role">管理员</div>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-section">
+            <div class="dropdown-section-title">外观设置</div>
+            <div class="theme-switcher">
+              <button class="theme-btn active" data-theme="light" id="themeLight">
+                <span>☀️</span> 浅色模式
+              </button>
+              <button class="theme-btn" data-theme="dark" id="themeDark">
+                <span>🌙</span> 深色模式
+              </button>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" onclick="openSettings()">
+            <span>⚙️</span> 设置中心
+          </div>
+          <div class="dropdown-item" onclick="openHelp()">
+            <span>❓</span> 帮助中心
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 设置中心弹窗 -->
+    <div class="modal-overlay" id="settingsModal" style="display:none;">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">⚙️ 设置中心</div>
+          <button class="modal-close" onclick="closeSettings()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="settings-group">
+            <div class="settings-label">外观设置</div>
+            <div class="settings-item">
+              <span>主题模式</span>
+              <div class="theme-switcher" style="width:auto;">
+                <button class="theme-btn active" data-theme="light" onclick="setTheme('light')">☀️ 浅色</button>
+                <button class="theme-btn" data-theme="dark" onclick="setTheme('dark')">🌙 深色</button>
+              </div>
+            </div>
+          </div>
+          <div class="settings-group">
+            <div class="settings-label">数据设置</div>
+            <div class="settings-item">
+              <span>自动刷新间隔</span>
+              <select class="settings-select" id="refreshInterval">
+                <option value="0">手动刷新</option>
+                <option value="30">每30分钟</option>
+                <option value="60" selected>每1小时</option>
+                <option value="360">每6小时</option>
+              </select>
+            </div>
+            <div class="settings-item">
+              <span>每页显示条数</span>
+              <select class="settings-select" id="pageSize">
+                <option value="10">10条</option>
+                <option value="20">20条</option>
+                <option value="35" selected>35条</option>
+                <option value="50">50条</option>
+              </select>
+            </div>
+          </div>
+          <div class="settings-group">
+            <div class="settings-label">通知设置</div>
+            <div class="settings-item">
+              <span>新内容提醒</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyNew" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="settings-item">
+              <span>浏览器通知</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifyBrowser">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="settings-group">
+            <div class="settings-label">账号信息</div>
+            <div class="settings-item">
+              <span>用户名</span>
+              <input type="text" class="settings-input" value="小白WU" id="usernameInput">
+            </div>
+            <div class="settings-item">
+              <span>邮箱</span>
+              <input type="email" class="settings-input" placeholder="请输入邮箱" id="emailInput">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="closeSettings()">取消</button>
+          <button class="btn-primary" onclick="saveSettings()">保存设置</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 帮助中心弹窗 -->
+    <div class="modal-overlay" id="helpModal" style="display:none;">
+      <div class="modal modal-lg">
+        <div class="modal-header">
+          <div class="modal-title">❓ 帮助中心</div>
+          <button class="modal-close" onclick="closeHelp()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="help-tabs">
+            <button class="help-tab active" onclick="switchHelpTab('guide')">使用指南</button>
+            <button class="help-tab" onclick="switchHelpTab('faq')">常见问题</button>
+            <button class="help-tab" onclick="switchHelpTab('about')">关于平台</button>
+          </div>
+          <div class="help-content" id="helpGuide">
+            <div class="help-section">
+              <h3>🚀 快速开始</h3>
+              <div class="help-item">
+                <div class="help-item-title">1. 浏览数据概览</div>
+                <div class="help-item-desc">首页展示三大平台（小红书、抖音、公众号）的热门内容数据，包括统计卡片、热门话题趋势和AI内容分析。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">2. 查看平台详情</div>
+                <div class="help-item-desc">点击左侧导航栏的平台名称，查看该平台的详细内容列表，支持按标签筛选。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">3. 搜索内容</div>
+                <div class="help-item-desc">使用顶部搜索框输入关键词，快速查找相关内容、作者或标签。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">4. 生成海报</div>
+                <div class="help-item-desc">点击左侧「海报生成」工具，输入产品信息，自动生成3:4比例的营销海报。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">5. 切换主题</div>
+                <div class="help-item-desc">点击右上角用户头像，选择「浅色模式」或「深色模式」切换界面主题。</div>
+              </div>
+            </div>
+            <div class="help-section">
+              <h3>📊 数据说明</h3>
+              <div class="help-item">
+                <div class="help-item-title">数据来源</div>
+                <div class="help-item-desc">小红书：搜索关键词页面 | 抖音：视频搜索页面 | 公众号：搜狗微信搜索</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">更新频率</div>
+                <div class="help-item-desc">数据通过自动化任务定期更新，确保内容的时效性。</div>
+              </div>
+            </div>
+          </div>
+          <div class="help-content" id="helpFaq" style="display:none;">
+            <div class="help-section">
+              <h3>❓ 常见问题</h3>
+              <div class="help-item">
+                <div class="help-item-title">Q: 为什么点击内容链接跳转到搜索页？</div>
+                <div class="help-item-desc">A: 由于平台反爬限制，部分链接为搜索页面链接，点击后可查看相关搜索结果。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">Q: 如何更新数据？</div>
+                <div class="help-item-desc">A: 点击顶部刷新按钮，或在设置中开启自动刷新功能。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">Q: 深色模式如何切换？</div>
+                <div class="help-item-desc">A: 点击右上角用户头像，在下拉菜单中选择「深色模式」即可切换。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">Q: 海报生成功能如何使用？</div>
+                <div class="help-item-desc">A: 点击左侧「海报生成」，填写产品名称和功能点，上传截图后导出3:4比例海报。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">Q: 搜索功能支持哪些内容？</div>
+                <div class="help-item-desc">A: 支持按标题、作者、标签进行模糊搜索，输入关键词即可查找相关内容。</div>
+              </div>
+            </div>
+          </div>
+          <div class="help-content" id="helpAbout" style="display:none;">
+            <div class="help-section">
+              <h3>ℹ️ 关于平台</h3>
+              <div class="help-item">
+                <div class="help-item-title">AI新媒体数据平台</div>
+                <div class="help-item-desc">专为新媒体从业者打造的财务垂直领域内容聚合平台，帮助用户快速了解小红书、抖音、公众号三大平台的热门内容趋势。</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">核心功能</div>
+                <div class="help-item-desc">• 多平台内容聚合与展示<br>• 爆款内容分析与AI洞察<br>• 海报自动生成工具<br>• 深色/浅色主题切换<br>• 关键词搜索与筛选</div>
+              </div>
+              <div class="help-item">
+                <div class="help-item-title">版本信息</div>
+                <div class="help-item-desc">版本：v2.0<br>更新日期：2026-06-01<br>技术栈：HTML + CSS + JavaScript</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview Page -->
+    <div class="page active" id="page-all">
+
+      <!-- Greeting Section -->
+      <div class="greeting-section" id="greetingSection">
+        <div class="greeting-content">
+          <h2 class="greeting-title" id="greetingTitle">👋 你好，小白WU</h2>
+          <p class="greeting-subtitle" id="greetingSubtitle">今天是 2026年6月5日，AI 正在为你捕捉全网热点</p>
+        </div>
+        <div class="greeting-actions">
+          <div class="date-picker-wrap">
+            <div class="date-badge" id="dateBadge" onclick="toggleDatePicker()">
+              📅 <span id="dateRangeText">近 7 天</span>
+              <span style="margin-left:4px;">📆</span>
+            </div>
+            <div class="date-picker-dropdown" id="datePickerDropdown">
+              <div class="date-picker-header">
+                <span class="date-picker-title">选择日期范围</span>
+              </div>
+              <div class="date-picker-presets">
+                <button class="preset-btn active" onclick="setDateRange('7d')">近7天</button>
+                <button class="preset-btn" onclick="setDateRange('30d')">近30天</button>
+                <button class="preset-btn" onclick="setDateRange('90d')">近90天</button>
+                <button class="preset-btn" onclick="setDateRange('all')">全部</button>
+              </div>
+              <div class="date-picker-custom">
+                <div class="date-input-group">
+                  <label>开始日期</label>
+                  <input type="date" id="startDate" onchange="updateCustomRange()">
+                </div>
+                <div class="date-input-group">
+                  <label>结束日期</label>
+                  <input type="date" id="endDate" onchange="updateCustomRange()">
+                </div>
+              </div>
+              <div class="date-picker-footer">
+                <button class="btn-secondary" onclick="toggleDatePicker()">取消</button>
+                <button class="btn-primary" onclick="applyDateRange()">确定</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn-icon" onclick="location.reload()">↻</button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <!-- Trending Analysis -->
+      <div class="trending-section">
+        <div class="trending-header">
+          <div class="trending-title">
+            <span class="trending-icon">📊</span>
+            <span>趋势分析</span>
+          </div>
+          <div class="trending-tabs">
+            <button class="trending-tab active" data-tab="keyword">关键词云</button>
+            <button class="trending-tab" data-tab="hot">热度趋势</button>
+            <button class="trending-tab" data-tab="platform">平台分布</button>
+          </div>
+        </div>
+        <div class="trending-content" id="trendingContent"></div>
+      </div>
+
+      <!-- Content Analysis Section -->
+      <div class="charts-section">
+        <div class="chart-card" style="grid-column: 1 / -1;">
+          <div class="chart-card-header">
+            <div class="chart-card-title">🔥 爆款内容分析</div>
+            <div class="chart-card-filter">AI 智能分析</div>
+          </div>
+          <div id="contentAnalysis"></div>
+        </div>
+      </div>
+
+      <!-- Content Preview -->
+      <div class="content-section">
+        <div class="content-section-header">
+          <div class="content-section-title">平台热门内容</div>
+          <a class="content-section-link" onclick="switchPage('all')">查看更多 →</a>
+        </div>
+        <div class="content-columns" id="platformPreviews"></div>
+      </div>
+    </div>
+
+    <!-- Xiaohongshu Page -->
+    <div class="page" id="page-xiaohongshu">
+      <div class="platform-banner xhs-bg">
+        <div>
+          <h1>📕 小红书热门</h1>
+          <p>今日小红书热门内容 Top 10 · 实时追踪爆款笔记</p>
+        </div>
+        <div class="platform-banner-stats" id="xhsStats"></div>
+      </div>
+      <div class="xhs-search-box">
+        <span>🔍</span>
+        <input type="text" id="xhsSearchInput" placeholder="输入关键词，跳转小红书搜索爆款笔记...">
+        <button onclick="searchXHS()">搜索</button>
+      </div>
+      <div class="content-list" id="xhsList"></div>
+    </div>
+
+    <!-- Douyin Page -->
+    <div class="page" id="page-douyin">
+      <div class="platform-banner dy-bg">
+        <div>
+          <h1>🎵 抖音热门</h1>
+          <p>今日抖音热门内容 Top 10 · 全网最火视频追踪</p>
+        </div>
+        <div class="platform-banner-stats" id="dyStats"></div>
+      </div>
+      <div class="content-list" id="dyList"></div>
+    </div>
+
+    <!-- Wechat Page -->
+    <div class="page" id="page-wechat">
+      <div class="platform-banner wx-bg">
+        <div>
+          <h1>💬 公众号热门</h1>
+          <p>今日公众号热门内容 Top 10 · 深度好文精选</p>
+        </div>
+        <div class="platform-banner-stats" id="wxStats"></div>
+      </div>
+      <div class="content-list" id="wxList"></div>
+    </div>
+
+    <!-- Comment Analysis Page -->
+    <div class="page" id="page-comments">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>💬 小红书评论区分析</h1>
+          <p>每日自动分析热门帖子评论区，洞察用户真实需求与行业趋势</p>
+        </div>
+        <div class="page-header-actions">
+          <div class="date-badge" id="commentDate">📅 今日分析</div>
+        </div>
+      </div>
+
+      <!-- 汇总面板 -->
+      <div class="comment-summary-panel" id="commentSummaryPanel"></div>
+
+      <!-- 关键词筛选 -->
+      <div class="comment-filter-bar" id="commentFilterBar"></div>
+
+      <!-- 帖子分析卡片列表 -->
+      <div class="comment-posts-grid" id="commentPostsGrid"></div>
+
+      <!-- 历史趋势 -->
+      <div class="comment-history-section" id="commentHistorySection"></div>
+    </div>
+
+    <!-- Topic Recommendations Page -->
+    <div class="page" id="page-analytics">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>💡 今日选题方向</h1>
+          <p>基于热门数据和平台趋势，为你推荐今日最佳选题</p>
+        </div>
+        <div class="page-header-actions">
+          <div class="date-badge" id="topicDate">📅 今日推荐</div>
+        </div>
+      </div>
+
+      <!-- 选题概览 -->
+      <div class="topic-overview" id="topicOverview"></div>
+
+      <!-- 各平台选题推荐 -->
+      <div class="topic-platforms" id="topicPlatforms"></div>
+
+      <!-- 选题分析 -->
+      <div class="topic-analysis" id="topicAnalysis"></div>
+    </div>
+
+    <!-- Title Recommendations Page -->
+    <div class="page" id="page-titles">
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>📝 今日标题推荐</h1>
+          <p id="titleDate">基于爆款公式，为你推荐不同角度的吸睛标题</p>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn-export" onclick="exportTitlesToExcel()">
+            📥 导出Excel
+          </button>
+        </div>
+      </div>
+      <div class="title-filter-bar">
+        <div class="title-filter-tabs" id="titleFilterTabs"></div>
+        <div class="title-filter-count" id="titleFilterCount">显示 66 个标题</div>
+      </div>
+      <div id="titleRecommendations"></div>
+    </div>
+    <!-- Copywriter Page -->
+    <div class="page" id="page-copywriter">
+      <div class="ai-writer-container">
+        <div class="ai-writer-hero">
+          <div class="ai-badge">✨ AI驱动的文案创作助手</div>
+          <h1>让传播不再需要门槛，让创作从未如此简单</h1>
+          <h2>灵感一触即发</h2>
+          <p>输入你的创意主题，让 AI 帮你生成爆款标题、正文和话题标签</p>
+        </div>
+        
+        <div class="ai-input-card">
+          <div class="ai-input-header">
+            <div class="ai-status" id="aiStatus">
+              <span class="status-dot offline"></span>
+              <span>AI未连接</span>
+            </div>
+            <button class="ai-settings-btn" onclick="openApiSettings()">⚙️ API设置（无效）</button>
+          </div>
+          <div class="ai-input-area">
+            <div class="ai-input-row">
+              <input type="text" id="chatInput" class="ai-text-input" placeholder="输入你想推广的产品，例如：财务软件、进销存、ERP..." onkeydown="if(event.key==='Enter')sendMessage()">
+              <button class="ai-generate-btn" onclick="sendMessage()">生成文案</button>
+            </div>
+          </div>
+          
+          <div class="ai-quick-actions">
+            <span class="ai-quick-label">快速开始：</span>
+            <button class="ai-quick-btn" onclick="quickInput('财务软件')">💰 财务软件</button>
+            <button class="ai-quick-btn" onclick="quickInput('代账软件')">📊 代账软件</button>
+            <button class="ai-quick-btn" onclick="quickInput('进销存')">📦 进销存</button>
+            <button class="ai-quick-btn" onclick="quickInput('ERP')">⚡ ERP</button>
+            <button class="ai-quick-btn" onclick="quickInput('AI做账')">🤖 AI做账</button>
+          </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages" style="display:none;"></div>
+      </div>
+      
+      <!-- API设置弹窗 -->
+      <div class="modal-overlay" id="apiSettingsModal" style="display:none;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>⚙️ API设置</h3>
+            <button class="modal-close" onclick="closeApiSettings()">✕</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>API服务商</label>
+              <select id="apiProvider" onchange="updateProviderFields()">
+                <option value="openai">OpenAI (GPT)</option>
+                <option value="deepseek">Deepseek</option>
+                <option value="qwen">通义千问</option>
+                <option value="custom">自定义</option>
+              </select>
+            </div>
+            <div class="form-group" id="customUrlGroup" style="display:none;">
+              <label>API地址</label>
+              <input type="text" id="apiUrl" placeholder="https://api.example.com/v1/chat/completions">
+            </div>
+            <div class="form-group">
+              <label>API Key</label>
+              <input type="password" id="apiKey" placeholder="输入你的API Key">
+            </div>
+            <div class="form-group">
+              <label>模型名称</label>
+              <input type="text" id="modelName" placeholder="gpt-3.5-turbo">
+            </div>
+            <button class="btn-save" onclick="saveSettings()">保存设置</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

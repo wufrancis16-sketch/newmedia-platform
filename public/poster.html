@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS 产品海报生成器</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #0F172A;
+            min-height: 100vh;
+        }
+
+        /* 步骤导航 */
+        .steps-nav {
+            position: fixed; top:0; left:0; right:0;
+            background: rgba(30,41,59,0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            display: flex; align-items: center; justify-content: center; gap: 40px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .step-item {
+            display: flex; align-items: center; gap: 8px;
+            color: #64748B; font-size: 14px; font-weight: 500;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .step-item.active { color: #fff; }
+        .step-item.done { color: #10B981; }
+        .step-num {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: #1E293B; border: 2px solid #334155;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700;
+        }
+        .step-item.active .step-num {
+            background: #3B82F6; border-color: #3B82F6; color: #fff;
+        }
+        .step-item.done .step-num {
+            background: #10B981; border-color: #10B981; color: #fff;
+        }
+
+        /* 页面容器 */
+        .step-page {
+            display: none;
+            padding: 80px 20px 40px;
+            min-height: 100vh;
+        }
+        .step-page.active { display: block; }
+
+        /* 第一步：输入产品信息 */
+        .input-container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #1E293B;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #334155;
+        }
+        .input-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .input-subtitle {
+            font-size: 15px;
+            color: #94A3B8;
+            margin-bottom: 32px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #CBD5E1;
+            margin-bottom: 8px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #3B82F6;
+        }
+        .form-input::placeholder { color: #475569; }
+        textarea.form-input {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* 功能点列表 */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: #0F172A;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .feature-item .form-input {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        .feature-item .form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .feature-emoji {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: linear-gradient(135deg, #3B82F6, #60A5FA);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; flex-shrink: 0; cursor: pointer;
+        }
+        .feature-fields { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .feature-name-input {
+            font-weight: 600 !important;
+            font-size: 16px !important;
+        }
+        .feature-desc-input {
+            font-size: 13px !important;
+            color: #94A3B8 !important;
+            min-height: 40px !important;
+        }
+        .feature-del {
+            width: 28px; height: 28px; border-radius: 6px;
+            background: #1E293B; border: 1px solid #334155;
+            color: #64748B; font-size: 14px;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; transition: all 0.2s;
+        }
+        .feature-del:hover {
+            background: #EF4444; border-color: #EF4444; color: #fff;
+        }
+
+        .btn-add-feature {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 2px dashed #334155;
+            border-radius: 10px;
+            color: #64748B;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-add-feature:hover {
+            border-color: #3B82F6;
+            color: #3B82F6;
+        }
+
+        .btn-generate {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            margin-top: 8px;
+        }
+        .btn-generate:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+        }
+
+        /* 第二步：海报编辑 */
+        .poster-toolbar {
+            position: fixed; top:0; left:0; right:0;
+            background: rgba(30,41,59,0.98);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .poster-toolbar-left {
+            display: flex; align-items: center; gap: 16px;
+        }
+        .btn-back {
+            padding: 6px 14px;
+            background: #1E293B;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #CBD5E1;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .btn-back:hover {
+            border-color: #3B82F6;
+            color: #fff;
+        }
+        .poster-toolbar-title {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .btn-export {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+            color: white; border: none; border-radius: 8px;
+            font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-export:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
+        }
+
+        #pages-container {
+            padding: 70px 20px 40px;
+        }
+
+        /* 海报页面样式 */
+        .page {
+            width: 1080px; height: 1440px;
+            margin: 0 auto 40px;
+            background: linear-gradient(180deg, #EFF6FF 0%, #F8FAFC 100%);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex; flex-direction: column;
+            overflow: hidden; position: relative;
+        }
+        .header { padding: 36px 30px 12px; text-align: center; flex-shrink: 0; }
+        .title-main {
+            font-size: 52px; font-weight: 900; color: #1E3A5F;
+            line-height: 1.25; margin-bottom: 8px; letter-spacing: 1px;
+        }
+        .title-main .highlight { color: #3B82F6; }
+        .title-divider {
+            width: 60px; height: 4px;
+            background: linear-gradient(90deg, #3B82F6, #60A5FA);
+            border-radius: 2px; margin: 18px auto 0;
+        }
+        .page-header-bar { padding: 36px 30px 8px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+        .page-header-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: linear-gradient(135deg, #3B82F6, #60A5FA);
+        }
+        .page-header-label {
+            font-size: 18px; color: #3B82F6; font-weight: 600; letter-spacing: 2px;
+        }
+        .blocks-container {
+            flex: 1;
+            padding: 10px 30px 30px;
+            display: flex; flex-direction: column;
+            gap: 14px;
+            overflow: hidden;
+            justify-content: flex-start;
+        }
+        .block {
+            display: flex; flex-direction: column;
+            flex-shrink: 0;
+            min-height: 0;
+        }
+        .function-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px; padding: 20px 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+            display: flex; gap: 16px; align-items: flex-start;
+            flex-shrink: 0; position: relative; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .function-card::before {
+            content: ''; position: absolute; left:0; top:0; bottom:0;
+            width: 4px;
+            background: linear-gradient(180deg, #8B5CF6 0%, #EC4899 100%);
+            border-radius: 0 4px 4px 0;
+        }
+        .function-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px; flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+            position: relative;
+        }
+        .function-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+        .function-content { flex: 1; }
+        .function-name { font-size: 22px; font-weight: 700; color: #1E293B; margin-bottom: 6px; letter-spacing: -0.3px; }
+        .function-desc { font-size: 16px; color: #64748B; line-height: 1.6; }
+        .screenshot-box {
+            min-height: 70px;
+            border: 2px dashed #60A5FA;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.75);
+            display: flex; flex-direction: column;
+            align-items: stretch;
+            cursor: pointer;
+            transition: border-color 0.25s, background 0.25s;
+            margin-top: 10px; overflow: hidden; flex-shrink: 0; position: relative;
+        }
+        .screenshot-box:hover {
+            border-color: #3B82F6;
+            background: rgba(255,255,255,0.9);
+        }
+        .screenshot-box.has-image { border: 2px solid #CBD5E1; background: #fff; }
+        .screenshot-box.has-image .placeholder-content { display: none; }
+        .placeholder-content {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 20px; min-height: 70px;
+        }
+        .placeholder-icon { font-size: 32px; color: #60A5FA; }
+        .placeholder-text { font-size: 16px; color: #94A3B8; }
+        .screenshot-multi {
+            display: none; width: 100%;
+            flex-direction: column; gap: 10px; padding: 10px;
+        }
+        .screenshot-box.has-image .screenshot-multi { display: flex; }
+        .screenshot-multi .img-wrapper + .img-wrapper { margin-top: 10px; }
+        .img-wrapper {
+            width: 100%; display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.5); border-radius: 8px;
+            overflow: hidden; position: relative;
+        }
+        .img-wrapper img { width: 100%; height: auto; display: block; border-radius: 4px; }
+        .img-add-btn {
+            position: absolute; top: 8px; right: 8px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+            color: white; border: none; font-size: 18px;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.4); z-index: 10;
+        }
+        .img-wrapper:hover .img-add-btn { display: flex; }
+        .exporting .img-add-btn { display: none !important; }
+        .img-del-btn {
+            position: absolute; top: 8px; right: 48px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+            color: white; border: none; font-size: 18px;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(239,68,68,0.4); z-index: 10;
+        }
+        .img-wrapper:hover .img-del-btn { display: flex; }
+        .exporting .img-del-btn { display: none !important; }
+        input[type="file"] { display: none; }
+        .toast {
+            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+            background: rgba(30,41,59,0.95); color: white;
+            padding: 12px 24px; border-radius: 8px; font-size: 14px;
+            z-index: 1001; opacity: 0; transition: opacity 0.3s; pointer-events: none;
+        }
+        .toast.show { opacity: 1; }
+        #measure-zone { position: absolute; left: -9999px; top: 0; width: 1020px; visibility: hidden; }
+
+        /* 配色选择 */
+        .color-options {
+            display: flex; gap: 10px; flex-wrap: wrap;
+        }
+        .color-option {
+            width: 40px; height: 40px; border-radius: 8px;
+            cursor: pointer; border: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .color-option:hover { transform: scale(1.1); }
+        .color-option.selected { border-color: #fff; box-shadow: 0 0 0 2px #3B82F6; }
+    </style>
+</head>
+<body>
+    <!-- 步骤导航 -->
+    <div class="steps-nav" id="stepsNav">
+        <div class="step-item active" data-step="1">
+            <div class="step-num">1</div>
+            <span>填写产品信息</span>
+        </div>
+        <div class="step-item" data-step="2">
+            <div class="step-num">2</div>
+            <span>上传截图 & 导出</span>
+        </div>
+    </div>
+
+    <!-- 第一步：输入产品信息 -->
+    <div class="step-page active" id="step1">
+        <div class="input-container">
+            <div class="input-title">🎨 SaaS 产品海报生成器</div>
+            <div class="input-subtitle">填写产品信息，自动生成海报模板，然后上传产品截图</div>
+
+            <div class="form-group">
+                <label class="form-label">产品名称</label>
+                <input type="text" class="form-input" id="productName" placeholder="例：印刷厂ERP管理系统" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">产品副标题</label>
+                <input type="text" class="form-input" id="productSubtitle" placeholder="例：项目进度实时查询，财务一体化管理" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">配色方案</label>
+                <div class="color-options" id="colorOptions">
+                    <div class="color-option selected" data-color="blue" style="background:linear-gradient(135deg,#3B82F6,#60A5FA);" title="科技蓝"></div>
+                    <div class="color-option" data-color="green" style="background:linear-gradient(135deg,#10B981,#34D399);" title="清新绿"></div>
+                    <div class="color-option" data-color="orange" style="background:linear-gradient(135deg,#F97316,#FB923C);" title="活力橙"></div>
+                    <div class="color-option" data-color="purple" style="background:linear-gradient(135deg,#8B5CF6,#A78BFA);" title="专业紫"></div>
+                    <div class="color-option" data-color="cyan" style="background:linear-gradient(135deg,#0891B2,#22D3EE);" title="沉稳青"></div>
+                    <div class="color-option" data-color="rose" style="background:linear-gradient(135deg,#E11D48,#FB7185);" title="玫瑰红"></div>
+                    <div class="color-option" data-color="forest" style="background:linear-gradient(135deg,#059669,#34D399);" title="森林绿"></div>
+                    <div class="color-option" data-color="gold" style="background:linear-gradient(135deg,#D97706,#FBBF24);" title="日落金"></div>
+                    <div class="color-option" data-color="indigo" style="background:linear-gradient(135deg,#4F46E5,#818CF8);" title="靛蓝"></div>
+                    <div class="color-option" data-color="pink" style="background:linear-gradient(135deg,#DB2777,#F472B6);" title="樱花粉"></div>
+                    <div class="color-option" data-color="teal" style="background:linear-gradient(135deg,#0D9488,#5EEAD4);" title="碧玉青"></div>
+                    <div class="color-option" data-color="amber" style="background:linear-gradient(135deg,#B45309,#FCD34D);" title="琥珀黄"></div>
+                    <div class="color-option" data-color="slate" style="background:linear-gradient(135deg,#334155,#94A3B8);" title="石板灰"></div>
+                    <div class="color-option" data-color="emerald" style="background:linear-gradient(135deg,#047857,#6EE7B7);" title="翡翠绿"></div>
+                    <div class="color-option" data-color="sky" style="background:linear-gradient(135deg,#0284C7,#7DD3FC);" title="天空蓝"></div>
+                    <div class="color-option" data-color="grad-sunset" style="background:linear-gradient(135deg,#F97316,#EC4899);" title="日落渐变"></div>
+                    <div class="color-option" data-color="grad-ocean" style="background:linear-gradient(135deg,#3B82F6,#06B6D4);" title="海洋渐变"></div>
+                    <div class="color-option" data-color="grad-aurora" style="background:linear-gradient(135deg,#10B981,#8B5CF6);" title="极光渐变"></div>
+                    <div class="color-option" data-color="grad-fire" style="background:linear-gradient(135deg,#EF4444,#F97316);" title="烈焰渐变"></div>
+                    <div class="color-option" data-color="grad-galaxy" style="background:linear-gradient(135deg,#6366F1,#EC4899);" title="银河渐变"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">功能点列表</label>
+                <div class="features-list" id="featuresList">
+                    <!-- 动态生成 -->
+                </div>
+                <button class="btn-add-feature" onclick="addFeature()">+ 添加功能点</button>
+            </div>
+
+            <button class="btn-generate" onclick="goToStep2()">🚀 生成海报模板</button>
+        </div>
+    </div>
+
+    <!-- 第二步：海报编辑 -->
+    <div class="step-page" id="step2">
+        <div class="poster-toolbar">
+            <div class="poster-toolbar-left">
+                <button class="btn-back" onclick="goToStep1()">← 返回修改</button>
+                <div class="poster-toolbar-title" id="posterTitle">海报编辑</div>
+            </div>
+            <button class="btn-export" onclick="startExport()">📥 导出成品图</button>
+        </div>
+        <div id="pages-container"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div id="measure-zone"></div>
+
+    <script>
+        // ============================================================
+        // 数据
+        // ============================================================
+        var ICONS_SVG = [
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+            '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>'
+        ];
+        var ICONS = ICONS_SVG;
+
+        var COLOR_SCHEMES = {
+            blue: { primary: '#3B82F6', light: '#60A5FA', bgStart: '#EFF6FF', accent: 'linear-gradient(180deg, #8B5CF6 0%, #EC4899 100%)' },
+            green: { primary: '#10B981', light: '#34D399', bgStart: '#ECFDF5', accent: 'linear-gradient(180deg, #EF4444 0%, #F97316 100%)' },
+            orange: { primary: '#F97316', light: '#FB923C', bgStart: '#FFF7ED', accent: 'linear-gradient(180deg, #DC2626 0%, #F97316 100%)' },
+            purple: { primary: '#8B5CF6', light: '#A78BFA', bgStart: '#F5F3FF', accent: 'linear-gradient(180deg, #EC4899 0%, #8B5CF6 100%)' },
+            cyan: { primary: '#0891B2', light: '#22D3EE', bgStart: '#ECFEFF', accent: 'linear-gradient(180deg, #06B6D4 0%, #3B82F6 100%)' },
+            rose: { primary: '#E11D48', light: '#FB7185', bgStart: '#FFF1F2', accent: 'linear-gradient(180deg, #BE123C 0%, #E11D48 100%)' },
+            forest: { primary: '#059669', light: '#34D399', bgStart: '#ECFDF5', accent: 'linear-gradient(180deg, #047857 0%, #10B981 100%)' },
+            gold: { primary: '#D97706', light: '#FBBF24', bgStart: '#FFFBEB', accent: 'linear-gradient(180deg, #B45309 0%, #F59E0B 100%)' },
+            indigo: { primary: '#4F46E5', light: '#818CF8', bgStart: '#EEF2FF', accent: 'linear-gradient(180deg, #7C3AED 0%, #4F46E5 100%)' },
+            pink: { primary: '#DB2777', light: '#F472B6', bgStart: '#FDF2F8', accent: 'linear-gradient(180deg, #BE185D 0%, #DB2777 100%)' },
+            teal: { primary: '#0D9488', light: '#5EEAD4', bgStart: '#F0FDFA', accent: 'linear-gradient(180deg, #0F766E 0%, #0D9488 100%)' },
+            amber: { primary: '#B45309', light: '#FCD34D', bgStart: '#FFFBEB', accent: 'linear-gradient(180deg, #92400E 0%, #B45309 100%)' },
+            slate: { primary: '#334155', light: '#94A3B8', bgStart: '#F8FAFC', accent: 'linear-gradient(180deg, #1E293B 0%, #334155 100%)' },
+            emerald: { primary: '#047857', light: '#6EE7B7', bgStart: '#ECFDF5', accent: 'linear-gradient(180deg, #065F46 0%, #047857 100%)' },
+            sky: { primary: '#0284C7', light: '#7DD3FC', bgStart: '#F0F9FF', accent: 'linear-gradient(180deg, #0369A1 0%, #0284C7 100%)' },
+            'grad-sunset': { primary: '#F97316', light: '#EC4899', bgStart: '#FFF7ED', accent: 'linear-gradient(180deg, #F97316 0%, #EC4899 100%)', gradient: 'linear-gradient(135deg, #F97316 0%, #EC4899 100%)' },
+            'grad-ocean': { primary: '#3B82F6', light: '#06B6D4', bgStart: '#EFF6FF', accent: 'linear-gradient(180deg, #3B82F6 0%, #06B6D4 100%)', gradient: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)' },
+            'grad-aurora': { primary: '#10B981', light: '#8B5CF6', bgStart: '#ECFDF5', accent: 'linear-gradient(180deg, #10B981 0%, #8B5CF6 100%)', gradient: 'linear-gradient(135deg, #10B981 0%, #8B5CF6 100%)' },
+            'grad-fire': { primary: '#EF4444', light: '#F97316', bgStart: '#FEF2F2', accent: 'linear-gradient(180deg, #EF4444 0%, #F97316 100%)', gradient: 'linear-gradient(135deg, #EF4444 0%, #F97316 100%)' },
+            'grad-galaxy': { primary: '#6366F1', light: '#EC4899', bgStart: '#EEF2FF', accent: 'linear-gradient(180deg, #6366F1 0%, #EC4899 100%)', gradient: 'linear-gradient(135deg, #6366F1 0%, #EC4899 100%)' }
+        };
+
+        var currentColor = 'blue';
+        var features = [];
+        var blockImages = {};
+        var MAX_IMG_BREAK = 2;
+        var PAGE_H = 1440;
+        var FUNCTIONS = [];
+
+        // ============================================================
+        // 初始化
+        // ============================================================
+        window.addEventListener('DOMContentLoaded', function() {
+            // 默认4个功能点
+            addFeature('功能点1', '在这里描述第一个功能点，尽量丰富2-3句话。');
+            addFeature('功能点2', '在这里描述第二个功能点，尽量丰富2-3句话。');
+            addFeature('功能点3', '在这里描述第三个功能点，尽量丰富2-3句话。');
+            addFeature('功能点4', '在这里描述第四个功能点，尽量丰富2-3句话。');
+
+            // 配色选择
+            document.querySelectorAll('.color-option').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    document.querySelectorAll('.color-option').forEach(function(e) { e.classList.remove('selected'); });
+                    el.classList.add('selected');
+                    currentColor = el.dataset.color;
+                });
+            });
+        });
+
+        // ============================================================
+        // 功能点管理
+        // ============================================================
+        function addFeature(name, desc) {
+            name = name || '';
+            desc = desc || '';
+            var idx = features.length;
+            features.push({ title: name, desc: desc });
+            var list = document.getElementById('featuresList');
+            var item = document.createElement('div');
+            item.className = 'feature-item';
+            item.dataset.idx = idx;
+            item.innerHTML =
+                '<div class="feature-emoji">' + (ICONS[idx] || '📌') + '</div>' +
+                '<div class="feature-fields">' +
+                    '<input type="text" class="form-input feature-name-input" placeholder="功能名称" value="' + esc(name) + '" onchange="updateFeature(' + idx + ',\'title\',this.value)">' +
+                    '<textarea class="form-input feature-desc-input" placeholder="功能描述（2-3句话）" onchange="updateFeature(' + idx + ',\'desc\',this.value)">' + esc(desc) + '</textarea>' +
+                '</div>' +
+                '<button class="feature-del" onclick="removeFeature(' + idx + ')">✕</button>';
+            list.appendChild(item);
+        }
+
+        function updateFeature(idx, field, value) {
+            if (features[idx]) {
+                features[idx][field] = value;
+            }
+        }
+
+        function removeFeature(idx) {
+            features.splice(idx, 1);
+            renderFeaturesList();
+        }
+
+        function renderFeaturesList() {
+            var list = document.getElementById('featuresList');
+            list.innerHTML = '';
+            features.forEach(function(f, i) {
+                var item = document.createElement('div');
+                item.className = 'feature-item';
+                item.dataset.idx = i;
+                item.innerHTML =
+                    '<div class="feature-emoji">' + (ICONS[i] || '📌') + '</div>' +
+                    '<div class="feature-fields">' +
+                        '<input type="text" class="form-input feature-name-input" placeholder="功能名称" value="' + esc(f.title) + '" onchange="updateFeature(' + i + ',\'title\',this.value)">' +
+                        '<textarea class="form-input feature-desc-input" placeholder="功能描述（2-3句话）" onchange="updateFeature(' + i + ',\'desc\',this.value)">' + esc(f.desc) + '</textarea>' +
+                    '</div>' +
+                    '<button class="feature-del" onclick="removeFeature(' + i + ')">✕</button>';
+                list.appendChild(item);
+            });
+        }
+
+        // ============================================================
+        // 步骤切换
+        // ============================================================
+        function goToStep1() {
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('stepsNav').style.display = 'flex';
+            updateStepsNav(1);
+        }
+
+        function goToStep2() {
+            // 收集数据
+            var name = document.getElementById('productName').value.trim() || '产品名称';
+            var subtitle = document.getElementById('productSubtitle').value.trim() || '产品副标题描述';
+
+            // 构建 FUNCTIONS
+            FUNCTIONS = features.filter(function(f) { return f.title.trim(); }).map(function(f) {
+                return { title: f.title, desc: f.desc };
+            });
+
+            if (FUNCTIONS.length === 0) {
+                showToast('请至少添加一个功能点');
+                return;
+            }
+
+            // 切换页面
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('stepsNav').style.display = 'none';
+            document.getElementById('posterTitle').textContent = name + ' - 海报编辑';
+
+            // 渲染海报
+            blockImages = {};
+            renderAll(name, subtitle);
+        }
+
+        function updateStepsNav(current) {
+            document.querySelectorAll('.step-item').forEach(function(el) {
+                var step = parseInt(el.dataset.step);
+                el.classList.remove('active', 'done');
+                if (step === current) el.classList.add('active');
+                if (step < current) el.classList.add('done');
+            });
+        }
+
+        // ============================================================
+        // 海报渲染
+        // ============================================================
+        function getScheme() {
+            return COLOR_SCHEMES[currentColor] || COLOR_SCHEMES.blue;
+        }
+
+        function getGradient(s) {
+            return s.gradient || (getGradient(s));
+        }
+
+        function renderAll(productName, productSubtitle) {
+            var container = document.getElementById('pages-container');
+            container.innerHTML = '';
+            var mZone = document.getElementById('measure-zone');
+            mZone.innerHTML = '';
+            var cardH = [], imgH = [];
+            for (var i = 0; i < FUNCTIONS.length; i++) {
+                var imgs = blockImages[i] || [];
+                mZone.appendChild(buildMeasureBlock(i, imgs));
+            }
+            void mZone.offsetHeight;
+            for (var i = 0; i < FUNCTIONS.length; i++) {
+                var el = mZone.children[i];
+                cardH.push(el.offsetHeight);
+                var wrappers = el.querySelectorAll('.img-wrapper');
+                var arr = [];
+                for (var j = 0; j < wrappers.length; j++) {
+                    arr.push(wrappers[j].offsetHeight + 10);
+                }
+                imgH.push(arr);
+            }
+            mZone.innerHTML = '';
+            var pageDefs = paginate(cardH, imgH);
+            for (var p = 0; p < pageDefs.length; p++) {
+                container.appendChild(buildPage(pageDefs[p], p, productName, productSubtitle));
+            }
+        }
+
+        function buildMeasureBlock(idx, imgs) {
+            var wrap = document.createElement('div');
+            wrap.style.cssText = 'display:flex;flex-direction:column;gap:0;';
+            var f = FUNCTIONS[idx];
+            var icon = ICONS[idx] || '📌';
+            var hasImg = imgs.length > 0;
+            var s = getScheme();
+            wrap.innerHTML =
+                '<div class="function-card">' +
+                    '<div class="function-icon" style="background:linear-gradient(135deg,' + s.primary + ',' + s.light + ');">' + icon + '</div>' +
+                    '<div class="function-content">' +
+                        '<div class="function-name">' + esc(f.title) + '</div>' +
+                        '<div class="function-desc">' + esc(f.desc) + '</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="screenshot-box' + (hasImg ? ' has-image' : '') + '">' +
+                    '<div class="placeholder-content">' +
+                        '<div class="placeholder-icon" style="color:' + s.light + ';">📷</div>' +
+                        '<div class="placeholder-text">点击此处粘贴/上传截图</div>' +
+                    '</div>' +
+                    '<div class="screenshot-multi"></div>' +
+                '</div>';
+            if (hasImg) {
+                var multi = wrap.querySelector('.screenshot-multi');
+                for (var j = 0; j < imgs.length; j++) {
+                    var w = document.createElement('div');
+                    w.className = 'img-wrapper';
+                    var im = document.createElement('img');
+                    im.src = imgs[j].src;
+                    w.appendChild(im);
+                    multi.appendChild(w);
+                }
+            }
+            return wrap;
+        }
+
+        function paginate(cardH, imgH) {
+            var result = [];
+            var isFirst = true;
+            var headerH = 180;
+            var contentMax = PAGE_H - headerH;
+            var items = [];
+            var usedH = 0;
+            function flushPage() {
+                if (items.length === 0) return;
+                result.push({ isFirst: isFirst, items: items });
+                items = [];
+                usedH = 0;
+                isFirst = false;
+                headerH = 70;
+                contentMax = PAGE_H - headerH;
+            }
+            function needFlush(addH) {
+                return (usedH + addH > contentMax) && items.length > 0;
+            }
+            for (var i = 0; i < FUNCTIONS.length; i++) {
+                var totalImgs = imgH[i].length;
+                if (items.length > 0) {
+                    var lastItem = items[items.length - 1];
+                    if (lastItem.type === 'block') {
+                        var lastTotal = imgH[lastItem.idx].length;
+                        if (lastTotal >= MAX_IMG_BREAK) flushPage();
+                    }
+                }
+                if (totalImgs === 0) {
+                    var h = cardH[i] + 14;
+                    if (needFlush(h)) flushPage();
+                    items.push({ type: 'block', idx: i, imgStart: 0, imgEnd: 0 });
+                    usedH += h;
+                    continue;
+                }
+                var cardOnlyH = cardH[i];
+                for (var k = 0; k < imgH[i].length; k++) cardOnlyH -= imgH[i][k];
+                var firstImgH = imgH[i][0] || 0;
+                var initialH = cardOnlyH + firstImgH;
+                if (needFlush(initialH)) flushPage();
+                items.push({ type: 'block', idx: i, imgStart: 0, imgEnd: 1 });
+                usedH += initialH;
+                for (var j = 1; j < totalImgs; j++) {
+                    var oneImgH = imgH[i][j];
+                    if (needFlush(oneImgH)) {
+                        flushPage();
+                        items.push({ type: 'cont', idx: i, imgStart: j, imgEnd: j });
+                        usedH += 30;
+                    }
+                    var cur = items[items.length - 1];
+                    cur.imgEnd = j + 1;
+                    usedH += oneImgH;
+                }
+                usedH += 14;
+            }
+            if (items.length > 0) result.push({ isFirst: isFirst, items: items });
+            return result;
+        }
+
+        function buildPage(pageDef, pageIdx, productName, productSubtitle) {
+            var s = getScheme();
+            var page = document.createElement('div');
+            page.className = 'page';
+            page.id = 'page-' + (pageIdx + 1);
+            page.style.background = 'linear-gradient(180deg, ' + s.bgStart + ' 0%, #F8FAFC 100%)';
+
+            var bg = document.createElement('div');
+            bg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden;';
+            bg.innerHTML = '<div style="position:absolute;width:300px;height:300px;top:-80px;right:-60px;border-radius:50%;background:linear-gradient(135deg,' + s.primary + ',' + s.light + ');opacity:0.06;"></div>';
+            page.appendChild(bg);
+
+            var content = document.createElement('div');
+            content.style.cssText = 'position:relative;z-index:1;display:flex;flex-direction:column;height:100%;';
+
+            if (pageDef.isFirst) {
+                content.innerHTML =
+                    '<div class="header">' +
+                        '<div class="title-main"><span class="highlight" style="color:' + s.primary + ';">' + esc(productName) + '</span><br>' + esc(productSubtitle) + '</div>' +
+                        '<div class="title-divider" style="background:linear-gradient(90deg,' + s.primary + ',' + s.light + ');"></div>' +
+                    '</div>';
+            } else {
+                content.innerHTML =
+                    '<div class="page-header-bar">' +
+                        '<div class="page-header-dot" style="background:linear-gradient(135deg,' + s.primary + ',' + s.light + ');"></div>' +
+                        '<div class="page-header-label" style="color:' + s.primary + ';">' + esc(productName) + ' · 核心功能</div>' +
+                    '</div>';
+            }
+
+            var bc = document.createElement('div');
+            bc.className = 'blocks-container';
+            for (var b = 0; b < pageDef.items.length; b++) {
+                bc.appendChild(buildItemEl(pageDef.items[b]));
+            }
+            content.appendChild(bc);
+            page.appendChild(content);
+            return page;
+        }
+
+        function buildItemEl(item) {
+            var s = getScheme();
+            var wrap = document.createElement('div');
+            wrap.className = 'block';
+            var idx = item.idx;
+            var f = FUNCTIONS[idx];
+            var allImgs = blockImages[idx] || [];
+            var pageImgs = allImgs.slice(item.imgStart, item.imgEnd);
+            var hasImg = pageImgs.length > 0;
+            var html = '';
+
+            if (item.type === 'block') {
+                var icon = ICONS[idx] || '📌';
+                html += '<div class="function-card">' +
+                            '<div class="function-icon" style="background:linear-gradient(135deg,' + s.primary + ',' + s.light + ');">' + icon + '</div>' +
+                            '<div class="function-content">' +
+                                '<div class="function-name">' + esc(f.title) + '</div>' +
+                                '<div class="function-desc">' + esc(f.desc) + '</div>' +
+                            '</div>' +
+                        '</div>';
+                html += '<div class="screenshot-box' + (hasImg ? ' has-image' : '') + '" data-block="' + idx + '" onclick="onClickBox(' + idx + ',this)" style="border-color:' + s.light + ';">' +
+                            '<div class="placeholder-content">' +
+                                '<div class="placeholder-icon" style="color:' + s.light + ';">📷</div>' +
+                                '<div class="placeholder-text">' + (hasImg ? '点击继续添加截图' : '点击此处粘贴/上传截图') + '</div>' +
+                            '</div>' +
+                            '<div class="screenshot-multi"></div>' +
+                         '</div>';
+            } else {
+                html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">' +
+                            '<div style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,' + s.primary + ',' + s.light + ');"></div>' +
+                            '<div style="font-size:16px;color:' + s.primary + ';font-weight:600;">' + esc(f.title) + ' (续)</div>' +
+                        '</div>';
+                html += '<div class="screenshot-box has-image" data-block="' + idx + '" onclick="onClickBox(' + idx + ',this)">' +
+                            '<div class="screenshot-multi"></div>' +
+                         '</div>';
+            }
+
+            wrap.innerHTML = html;
+
+            if (hasImg) {
+                var multi = wrap.querySelector('.screenshot-multi');
+                for (var k = 0; k < pageImgs.length; k++) {
+                    var globalIdx = item.imgStart + k;
+                    var w = document.createElement('div');
+                    w.className = 'img-wrapper';
+                    var img = document.createElement('img');
+                    img.src = pageImgs[k].src;
+                    w.appendChild(img);
+
+                    var addBtn = document.createElement('button');
+                    addBtn.className = 'img-add-btn';
+                    addBtn.innerHTML = '&#43;';
+                    addBtn.onclick = (function(blockIdx) {
+                        return function(e) { e.stopPropagation(); onClickBox(blockIdx, this); };
+                    })(idx);
+                    w.appendChild(addBtn);
+
+                    var delBtn = document.createElement('button');
+                    delBtn.className = 'img-del-btn';
+                    delBtn.innerHTML = '&#8722;';
+                    delBtn.onclick = (function(blockIdx, imgIdx) {
+                        return function(e) {
+                            e.stopPropagation();
+                            if (blockImages[blockIdx]) {
+                                blockImages[blockIdx].splice(imgIdx, 1);
+                                renderAll(document.getElementById('productName').value || '产品名称', document.getElementById('productSubtitle').value || '');
+                                showToast('已删除图片，剩余 ' + blockImages[blockIdx].length + ' 张');
+                            }
+                        };
+                    })(idx, globalIdx);
+                    w.appendChild(delBtn);
+                    multi.appendChild(w);
+                }
+            }
+            return wrap;
+        }
+
+        function esc(s) {
+            var d = document.createElement('div');
+            d.appendChild(document.createTextNode(s));
+            return d.innerHTML;
+        }
+
+        // ============================================================
+        // 图片上传
+        // ============================================================
+        function onClickBox(blockIndex, el) {
+            var box = el.closest ? el.closest('.screenshot-box') : null;
+            if (!box) box = document.querySelector('.screenshot-box[data-block="' + blockIndex + '"]');
+            var input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.multiple = true;
+            input.style.display = 'none';
+            input.onchange = function() {
+                var files = [];
+                for (var i = 0; i < this.files.length; i++) files.push(this.files[i]);
+                handleFiles(blockIndex, files);
+                input.remove();
+            };
+            document.body.appendChild(input);
+            input.click();
+        }
+
+        function handleFiles(blockIndex, files) {
+            if (!files || files.length === 0) return;
+            if (!blockImages[blockIndex]) blockImages[blockIndex] = [];
+            var pending = files.length;
+            var loaded = 0;
+            for (var i = 0; i < files.length; i++) {
+                (function(file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var img = new Image();
+                        img.onload = function() {
+                            blockImages[blockIndex].push({ src: e.target.result });
+                            loaded++;
+                            if (loaded >= pending) {
+                                renderAll(document.getElementById('productName').value || '产品名称', document.getElementById('productSubtitle').value || '');
+                                showToast('功能「' + FUNCTIONS[blockIndex].title + '」共 ' + blockImages[blockIndex].length + ' 张图片');
+                            }
+                        };
+                        img.onerror = function() { loaded++; if (loaded >= pending) renderAll(document.getElementById('productName').value || '产品名称', document.getElementById('productSubtitle').value || ''); };
+                        img.src = e.target.result;
+                    };
+                    reader.onerror = function() { loaded++; if (loaded >= pending) renderAll(document.getElementById('productName').value || '产品名称', document.getElementById('productSubtitle').value || ''); };
+                    reader.readAsDataURL(file);
+                })(files[i]);
+            }
+        }
+
+        document.addEventListener('paste', function(e) {
+            var box = document.querySelector('.screenshot-box:hover');
+            if (!box) return;
+            var blockIndex = parseInt(box.dataset.block);
+            var items = e.clipboardData.items;
+            var blobs = [];
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].type && items[i].type.indexOf('image') !== -1) {
+                    blobs.push(items[i].getAsFile());
+                }
+            }
+            if (blobs.length > 0) handleFiles(blockIndex, blobs);
+        });
+
+        // ============================================================
+        // 导出
+        // ============================================================
+        function startExport() {
+            var btn = document.querySelector('.btn-export');
+            btn.disabled = true;
+            btn.textContent = '渲染中...';
+            document.body.classList.add('exporting');
+            var pages = document.querySelectorAll('.page');
+            var hiddenEls = [];
+            pages.forEach(function(page) {
+                page.querySelectorAll('.img-add-btn').forEach(function(el) {
+                    hiddenEls.push({ el: el, prop: 'display', val: el.style.display });
+                    el.style.display = 'none';
+                });
+                page.querySelectorAll('.img-del-btn').forEach(function(el) {
+                    hiddenEls.push({ el: el, prop: 'display', val: el.style.display });
+                    el.style.display = 'none';
+                });
+                page.querySelectorAll('.screenshot-box .placeholder-content').forEach(function(el) {
+                    hiddenEls.push({ el: el, prop: 'display', val: el.style.display });
+                    el.style.display = 'none';
+                });
+            });
+            var results = [];
+            var idx = 0;
+            function restore() {
+                hiddenEls.forEach(function(item) { item.el.style[item.prop] = item.val; });
+                hiddenEls = [];
+                btn.disabled = false;
+                btn.textContent = '📥 导出成品图';
+                document.body.classList.remove('exporting');
+            }
+            function next() {
+                if (idx >= pages.length) {
+                    restore();
+                    showExportModal(results);
+                    return;
+                }
+                showToast('正在渲染第 ' + (idx + 1) + ' / ' + pages.length + ' 张...');
+                html2canvas(pages[idx], {
+                    scale: 2, useCORS: true, allowTaint: true,
+                    backgroundColor: null, width: 1080, height: 1440
+                }).then(function(canvas) {
+                    results.push({ dataUrl: canvas.toDataURL('image/png'), index: idx + 1 });
+                    idx++;
+                    setTimeout(next, 200);
+                }).catch(function(err) {
+                    console.error('渲染失败:', err);
+                    idx++;
+                    setTimeout(next, 200);
+                });
+            }
+            next();
+        }
+
+        function showExportModal(results) {
+            var overlay = document.createElement('div');
+            overlay.id = 'export-overlay';
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;overflow-y:auto;padding:40px 20px;';
+            var tip = document.createElement('div');
+            tip.style.cssText = 'text-align:center;color:#fff;margin-bottom:28px;';
+            tip.innerHTML = '<div style="font-size:22px;font-weight:700;margin-bottom:10px;">✅ 渲染完成！共 ' + results.length + ' 张图片</div>' +
+                '<div style="font-size:16px;color:#93C5FD;line-height:1.8;">在每张图片上 <strong style="color:#FCD34D">「右键 → 图片另存为」</strong> 即可保存到电脑</div>' +
+                '<button onclick="document.getElementById(\'export-overlay\').remove()" style="margin-top:16px;padding:8px 28px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;">✕ 关闭预览</button>';
+            overlay.appendChild(tip);
+            for (var i = 0; i < results.length; i++) {
+                (function(item) {
+                    var card = document.createElement('div');
+                    card.style.cssText = 'max-width:540px;margin:0 auto 32px;background:#1E293B;border-radius:12px;padding:14px;text-align:center;';
+                    card.innerHTML = '<div style="color:#6EE7B7;font-size:15px;font-weight:600;margin-bottom:10px;">第 ' + item.index + ' 张 — 右键图片 → 「图片另存为」</div>' +
+                        '<img src="' + item.dataUrl + '" style="width:100%;border-radius:8px;display:block;cursor:context-menu;" title="右键 → 图片另存为">' +
+                        '<div style="color:#64748B;font-size:13px;margin-top:8px;">建议文件名：poster_0' + item.index + '.png</div>';
+                    overlay.appendChild(card);
+                })(results[i]);
+            }
+            document.body.appendChild(overlay);
+        }
+
+        function showToast(msg) {
+            var t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(function() { t.classList.remove('show'); }, 2500);
+        }
+    </script>
+</body>
+</html>

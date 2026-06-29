@@ -1,0 +1,14 @@
+{
+  "name": "newmedia-platform",
+  "version": "1.0.0",
+  "description": "新媒体数据平台 - 小红书/抖音/公众号热门内容聚合",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2"
+  }
+}

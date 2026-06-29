@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-29T14:21:20.846916",
+  "keywords": [
+    "进销存",
+    "财务软件",
+    "ERP",
+    "库存管理",
+    "做账",
+    "项目管理"
+  ],
+  "summary": {
+    "total_posts": 0,
+    "total_comments": 0,
+    "top_industry": "其他",
+    "sentiment": {
+      "positive": 0,
+      "question": 0,
+      "negative": 0
+    },
+    "overall_industries": {},
+    "overall_intents": {},
+    "overall_competitors": {},
+    "overall_pain_points": {}
+  },
+  "posts": [],
+  "historical": [
+    {
+      "date": "2026-06-29",
+      "summary": {
+        "total_posts": 0,
+        "total_comments": 0,
+        "top_industry": "其他",
+        "sentiment": {
+          "positive": 0,
+          "question": 0,
+          "negative": 0
+        },
+        "overall_industries": {},
+        "overall_intents": {},
+        "overall_competitors": {},
+        "overall_pain_points": {}
+      }
+    }
+  ]
+}
