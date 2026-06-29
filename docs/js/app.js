@@ -4429,12 +4429,8 @@ function renderCommentAnalysis() {
   // 渲染关键词筛选
   if (filterBar) renderCommentFilter(filterBar, data);
 
-  // 渲染帖子卡片
+  // 渲染帖子卡片（内含AI生成文案）
   if (postsGrid) renderCommentPosts(postsGrid, data);
-
-  // 渲染AI生成内容
-  var genSection = document.getElementById('commentGenSection');
-  if (genSection) renderGeneratedContent(genSection, data);
 
   // 渲染历史趋势
   if (historySection) renderCommentHistory(historySection, data.historical || []);
@@ -4517,11 +4513,11 @@ function renderCommentPosts(grid, data) {
   }
 
   grid.innerHTML = filtered.map(function(post, idx) {
-    return renderPostCard(post, idx);
+    return renderPostCard(post, idx, data);
   }).join('');
 }
 
-function renderPostCard(post, idx) {
+function renderPostCard(post, idx, data) {
   var industry = post.industry_distribution || {};
   var intents = post.intent_distribution || {};
   var competitors = post.competitor_mentions || {};
@@ -4620,6 +4616,51 @@ function renderPostCard(post, idx) {
         '<div class="comment-section-title">💡 选题建议</div>' +
         '<div class="comment-suggestions">' + suggestionsHtml + '</div>' +
       '</div>' +
+      renderGenPostInline(post.keyword, data) +
+    '</div>' +
+  '</div>';
+}
+
+// 在帖子卡片内渲染AI生成文案
+function renderGenPostInline(keyword, data) {
+  var genData = data && data.generated_content;
+  if (!genData || !genData.posts || genData.posts.length === 0) return '';
+
+  var genPost = genData.posts.find(function(p) { return p.keyword === keyword; });
+  if (!genPost) return '';
+
+  var tagsHtml = (genPost.tags || []).map(function(t) { 
+    return '<span class="gen-inline-tag">' + t + '</span>'; 
+  }).join('');
+
+  var bodyLines = (genPost.body || '').split('\n').map(function(line) {
+    var trimmed = line.trim();
+    if (!trimmed) return '';
+    if (trimmed.startsWith('✅')) {
+      return '<div class="gen-inline-feature">' + trimmed + '</div>';
+    }
+    if (trimmed.startsWith('💡')) {
+      return '<div class="gen-inline-tip">' + trimmed + '</div>';
+    }
+    return '<div class="gen-inline-text">' + trimmed + '</div>';
+  }).join('');
+
+  return '<div class="comment-section gen-inline-section">' +
+    '<div class="comment-section-title gen-inline-title">' +
+      '🤖 AI生成推广文案' +
+      '<span class="gen-inline-scene">' + (genPost.scene_type || '') + '</span>' +
+    '</div>' +
+    '<div class="gen-inline-card">' +
+      '<div class="gen-inline-header">' +
+        '<span class="gen-inline-product">' + (genPost.product || '') + ' · ' + (genPost.price || '') + '</span>' +
+      '</div>' +
+      '<div class="gen-inline-post-title">' + (genPost.title || '') + '</div>' +
+      '<div class="gen-inline-body">' + bodyLines + '</div>' +
+      '<div class="gen-inline-footer">' +
+        '<div class="gen-inline-tags">' + tagsHtml + '</div>' +
+        '<button class="gen-inline-copy" onclick="copyGenPostInline(this)" data-post="' + 
+          encodeURIComponent(JSON.stringify(genPost)) + '">📋 复制文案</button>' +
+      '</div>' +
     '</div>' +
   '</div>';
 }
@@ -4647,54 +4688,8 @@ function renderCommentHistory(container, historical) {
     '<div class="comment-history-grid">' + cards + '</div>';
 }
 
-function renderGeneratedContent(container, data) {
-  var genData = data.generated_content;
-  if (!genData || !genData.posts || genData.posts.length === 0) {
-    container.style.display = 'none';
-    return;
-  }
-
-  container.style.display = 'block';
-  var posts = genData.posts;
-
-  // 如果有关键词筛选，也过滤生成内容
-  if (commentFilterKeyword !== 'all') {
-    posts = posts.filter(function(p) { return p.keyword === commentFilterKeyword; });
-  }
-
-  if (posts.length === 0) {
-    container.style.display = 'none';
-    return;
-  }
-
-  var cards = posts.map(function(post) {
-    var tagsHtml = (post.tags || []).map(function(t) { return '<span class="gen-post-tag">' + t + '</span>'; }).join('');
-    var bodyEscaped = (post.body || '').replace(/✅ /g, '<span class="gen-check">✅</span> ').replace(/\n/g, '<br>');
-
-    return '<div class="gen-post-card">' +
-      '<div class="gen-post-header">' +
-        '<span class="gen-post-badge">🤖 AI生成</span>' +
-        '<span class="gen-post-scene">' + (post.scene_type || '') + '</span>' +
-        '<span class="gen-post-product">' + (post.product || '') + ' · ' + (post.price || '') + '</span>' +
-      '</div>' +
-      '<div class="gen-post-title">' + post.title + '</div>' +
-      '<div class="gen-post-body">' + bodyEscaped + '</div>' +
-      '<div class="gen-post-footer">' +
-        '<div class="gen-post-tags">' + tagsHtml + '</div>' +
-        '<div class="gen-post-stats">' +
-          '<span class="gen-post-count" title="该方向已发布条数">📋 累计发布 ' + (post.publish_count || 0) + ' 条</span>' +
-          '<button class="gen-post-copy" onclick="copyGenPost(this)" data-post="' + encodeURIComponent(JSON.stringify(post)) + '">📋 复制文案</button>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-  }).join('');
-
-  container.innerHTML = '<div class="comment-history-title" style="margin-bottom:16px;">🤖 AI生成小红书文案 <span style="font-size:12px;color:var(--text-muted);font-weight:400;">基于评论区洞察自动生成，每日更新</span></div>' +
-    '<div class="gen-posts-grid">' + cards + '</div>';
-}
-
-// 复制生成文案
-function copyGenPost(btn) {
+// 复制卡片内AI生成文案
+function copyGenPostInline(btn) {
   try {
     var data = JSON.parse(decodeURIComponent(btn.getAttribute('data-post')));
     var text = '【标题】\n' + data.title + '\n\n【正文】\n' + data.body + '\n\n【话题】\n' + (data.tags || []).join(' ');
