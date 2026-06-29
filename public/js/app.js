@@ -4668,7 +4668,7 @@ function renderGenPostInline(keyword, data) {
     '<div class="comment-section-title gen-inline-title">' +
       '🤖 AI生成推广文案 <span style="font-size:11px;color:var(--text-muted);font-weight:400">基于评论区高频痛点自动生成 · ' + genPosts.length + '篇</span>' +
     '</div>' +
-    cards +
+    '<div class="gen-inline-grid">' + cards + '</div>' +
   '</div>';
 }
 

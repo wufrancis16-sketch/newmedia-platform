@@ -3649,20 +3649,27 @@ body.dark-mode .content-item:hover {
   font-weight: 600;
 }
 
-.gen-inline-card {
-  background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #fafafe 100%);
-  margin-bottom: 12px;
+/* 两篇文案左右并排容器 */
+.gen-inline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.gen-inline-card:last-child {
-  margin-bottom: 0;
-}
+.gen-inline-card {
+  background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #fafafe 100%);
   border: 1px solid #e9d5ff;
   border-left: 3px solid #8b5cf6;
   border-radius: 10px;
   padding: 16px 18px;
-  margin-top: 10px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .gen-inline-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gen-inline-header {
