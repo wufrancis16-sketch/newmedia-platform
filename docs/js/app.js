@@ -4592,29 +4592,31 @@ function renderPostCard(post, idx, data) {
       '</div>' +
     '</div>' +
     '<div class="comment-post-body">' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">🏭 行业分布</div>' +
-        '<div class="comment-bar-list">' + (industryBars || '<span style="font-size:12px;color:var(--text-muted);">暂无数据</span>') + '</div>' +
-      '</div>' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">🎯 用户意图</div>' +
-        '<div class="comment-intent-list">' + (intentItems || '<span style="font-size:12px;color:var(--text-muted);">暂无数据</span>') + '</div>' +
-      '</div>' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">🏢 竞品提及</div>' +
-        '<div class="comment-tags">' + compTags + '</div>' +
-      '</div>' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">😣 用户痛点</div>' +
-        '<div class="comment-tags">' + painTags + '</div>' +
-      '</div>' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">💬 代表评论</div>' +
-        '<div class="comment-quote-list">' + quotesHtml + '</div>' +
-      '</div>' +
-      '<div class="comment-section">' +
-        '<div class="comment-section-title">💡 选题建议</div>' +
-        '<div class="comment-suggestions">' + suggestionsHtml + '</div>' +
+      '<div class="comment-post-analysis">' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">🏭 行业分布</div>' +
+          '<div class="comment-bar-list">' + (industryBars || '<span style="font-size:12px;color:var(--text-muted);">暂无数据</span>') + '</div>' +
+        '</div>' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">🎯 用户意图</div>' +
+          '<div class="comment-intent-list">' + (intentItems || '<span style="font-size:12px;color:var(--text-muted);">暂无数据</span>') + '</div>' +
+        '</div>' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">🏢 竞品提及</div>' +
+          '<div class="comment-tags">' + compTags + '</div>' +
+        '</div>' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">😣 用户痛点</div>' +
+          '<div class="comment-tags">' + painTags + '</div>' +
+        '</div>' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">💬 代表评论</div>' +
+          '<div class="comment-quote-list">' + quotesHtml + '</div>' +
+        '</div>' +
+        '<div class="comment-section">' +
+          '<div class="comment-section-title">💡 选题建议</div>' +
+          '<div class="comment-suggestions">' + suggestionsHtml + '</div>' +
+        '</div>' +
       '</div>' +
       renderGenPostInline(post.keyword, data) +
     '</div>' +
