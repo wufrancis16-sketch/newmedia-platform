@@ -3317,7 +3317,15 @@ body.dark-mode .content-item:hover {
 .comment-post-body {
   padding: 20px 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* 左侧分析区块容器 */
+.comment-post-analysis {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -3623,6 +3631,8 @@ body.dark-mode .content-item:hover {
    ============================================= */
 
 .gen-inline-section {
+  padding-left: 20px;
+  border-left: 1px solid #e9d5ff;
 }
 
 .gen-inline-title {
@@ -3651,8 +3661,8 @@ body.dark-mode .content-item:hover {
 
 /* 两篇文案左右并排容器 */
 .gen-inline-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   margin-top: 10px;
 }
@@ -3664,12 +3674,6 @@ body.dark-mode .content-item:hover {
   border-radius: 10px;
   padding: 16px 18px;
   position: relative;
-}
-
-@media (max-width: 768px) {
-  .gen-inline-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .gen-inline-header {
