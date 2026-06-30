@@ -59,6 +59,23 @@ app.get('/api/stats', async (req, res) => {
   }
 });
 
+// 小红书评论区分析数据
+app.get('/api/comment-analysis', (req, res) => {
+  try {
+    const fs = require('fs');
+    const jsonPath = path.join(__dirname, 'data', 'xhs-comment-analysis.json');
+    if (fs.existsSync(jsonPath)) {
+      const raw = fs.readFileSync(jsonPath, 'utf-8');
+      const data = JSON.parse(raw);
+      res.json({ success: true, data });
+    } else {
+      res.json({ success: false, message: '评论分析数据文件不存在' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: '读取失败', error: error.message });
+  }
+});
+
 // 健康检查
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', platform: '新媒体数据平台', uptime: process.uptime(), timestamp: new Date().toISOString() });
