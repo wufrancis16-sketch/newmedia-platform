@@ -1,0 +1,338 @@
+{
+  "generated_at": "2026-06-30T11:01:52.902397",
+  "keywords": [
+    "进销存",
+    "财务软件",
+    "ERP",
+    "库存管理",
+    "做账",
+    "项目管理"
+  ],
+  "summary": {
+    "total_posts": 5,
+    "total_comments": 92,
+    "top_industry": "其他",
+    "sentiment": {
+      "positive": 2,
+      "question": 12,
+      "negative": 13
+    },
+    "overall_industries": {
+      "其他": 76,
+      "制造/工业": 8,
+      "汽车/汽配": 4,
+      "贸易/进出口": 2,
+      "餐饮": 2
+    },
+    "overall_intents": {
+      "其他": 74,
+      "咨询选型": 8,
+      "询价": 4,
+      "正面反馈": 2,
+      "吐槽竞品": 2,
+      "提及竞品": 2
+    },
+    "overall_competitors": {
+      "金蝶": 2
+    },
+    "overall_pain_points": {
+      "功能不够": 4,
+      "行业不匹配": 2,
+      "不稳定": 2,
+      "没人教": 1,
+      "操作复杂": 1,
+      "数据不准": 1
+    }
+  },
+  "posts": [
+    {
+      "note_id": "66544c77000000001401b0e2",
+      "title": "用友金蝶管家婆进销存都698起一年，怎么选",
+      "author": "A畅捷通业财软件咨询",
+      "keyword": "进销存",
+      "likes": 975,
+      "collects": 731,
+      "comment_count": 689,
+      "fetched_comments": 20,
+      "industry_distribution": {
+        "其他": 15,
+        "汽车/汽配": 2,
+        "贸易/进出口": 1,
+        "餐饮": 1,
+        "制造/工业": 1
+      },
+      "intent_distribution": {
+        "其他": 16,
+        "咨询选型": 4
+      },
+      "competitor_mentions": {},
+      "pain_points": {
+        "行业不匹配": 1
+      },
+      "representative_comments": [
+        "化工行业",
+        "贸易➕项目，建议用哪个",
+        "餐饮业原料供应链适合哪款。"
+      ],
+      "content_suggestions": [
+        {
+          "type": "行业针对性",
+          "title": "汽车/汽配、贸易/进出口行业的财务软件怎么选？",
+          "reason": "评论区'汽车/汽配/贸易/进出口'行业用户占比高，针对性内容需求明确"
+        },
+        {
+          "type": "痛点解答",
+          "title": "关于「行业不匹配」的真相——资深用户的避坑指南",
+          "reason": "评论区中'行业不匹配'是最突出的用户痛点，直接回应可建立信任"
+        }
+      ],
+      "url": "https://www.xiaohongshu.com/explore/66544c77000000001401b0e2"
+    },
+    {
+      "note_id": "6a311c8c00000000150263d3",
+      "title": "比Vlookup好用1万倍的Xlookup，附函数大全",
+      "author": "玥琪",
+      "keyword": "财务软件",
+      "likes": 5033,
+      "collects": 8903,
+      "comment_count": 763,
+      "fetched_comments": 16,
+      "industry_distribution": {
+        "其他": 16
+      },
+      "intent_distribution": {
+        "其他": 15,
+        "正面反馈": 1
+      },
+      "competitor_mentions": {},
+      "pain_points": {},
+      "representative_comments": [
+        "数据",
+        "美女，求分享[合十R]",
+        "已关注，求分享"
+      ],
+      "content_suggestions": [],
+      "url": "https://www.xiaohongshu.com/explore/6a311c8c00000000150263d3"
+    },
+    {
+      "note_id": "6a3de86a000000000f006eaa",
+      "title": "",
+      "author": "一只不会游泳的鱼fgt",
+      "keyword": "ERP",
+      "likes": 2270,
+      "collects": 579,
+      "comment_count": 1062,
+      "fetched_comments": 18,
+      "industry_distribution": {
+        "其他": 13,
+        "制造/工业": 5
+      },
+      "intent_distribution": {
+        "其他": 13,
+        "吐槽竞品": 2,
+        "提及竞品": 2,
+        "正面反馈": 1
+      },
+      "competitor_mentions": {
+        "金蝶": 2
+      },
+      "pain_points": {
+        "功能不够": 3,
+        "不稳定": 2,
+        "没人教": 1,
+        "操作复杂": 1,
+        "数据不准": 1
+      },
+      "representative_comments": [
+        "搞不懂为什么要用这个，特别是那种十几二十几个人的小公司，纯增加工作量。我之前那家一百多人都规模，用Excel多方便，还准确。",
+        "你们没有强卡吗？我们都是一个环节一个人审核 没制单审核就不行啊  全厂上下遵循没单不办事[捂脸R][捂脸R][捂脸R]",
+        "小公司想模仿大公司的流程规范化，又舍不得招人，人员不配齐，数据做不上去，我们公司就是。有加工车间和装配车间，没有PMC，也没有生产助理(文员)，也没有专门的领料员，一个采购，买标件还要负责外协件，做采购合同，对账，一个仓库又拉货又做出入库。买材料回来，加工车间能做多少是多少，买1000千个材料加工入库，等去仓库领料出来装配，才知道不够数，又让采购去下料。"
+      ],
+      "content_suggestions": [
+        {
+          "type": "行业针对性",
+          "title": "制造/工业行业的财务软件怎么选？",
+          "reason": "评论区'制造/工业'行业用户占比高，针对性内容需求明确"
+        },
+        {
+          "type": "痛点解答",
+          "title": "关于「功能不够」的真相——资深用户的避坑指南",
+          "reason": "评论区中'功能不够'是最突出的用户痛点，直接回应可建立信任"
+        }
+      ],
+      "url": "https://www.xiaohongshu.com/explore/6a3de86a000000000f006eaa"
+    },
+    {
+      "note_id": "66544c77000000001401b0e2",
+      "title": "用友金蝶管家婆进销存都698起一年，怎么选",
+      "author": "A畅捷通业财软件咨询",
+      "keyword": "库存管理",
+      "likes": 975,
+      "collects": 731,
+      "comment_count": 689,
+      "fetched_comments": 20,
+      "industry_distribution": {
+        "其他": 15,
+        "汽车/汽配": 2,
+        "贸易/进出口": 1,
+        "餐饮": 1,
+        "制造/工业": 1
+      },
+      "intent_distribution": {
+        "其他": 16,
+        "咨询选型": 4
+      },
+      "competitor_mentions": {},
+      "pain_points": {
+        "行业不匹配": 1
+      },
+      "representative_comments": [
+        "化工行业",
+        "贸易➕项目，建议用哪个",
+        "餐饮业原料供应链适合哪款。"
+      ],
+      "content_suggestions": [
+        {
+          "type": "行业针对性",
+          "title": "汽车/汽配、贸易/进出口行业的财务软件怎么选？",
+          "reason": "评论区'汽车/汽配/贸易/进出口'行业用户占比高，针对性内容需求明确"
+        },
+        {
+          "type": "痛点解答",
+          "title": "关于「行业不匹配」的真相——资深用户的避坑指南",
+          "reason": "评论区中'行业不匹配'是最突出的用户痛点，直接回应可建立信任"
+        }
+      ],
+      "url": "https://www.xiaohongshu.com/explore/66544c77000000001401b0e2"
+    },
+    {
+      "note_id": "661f9393000000001c00b609",
+      "title": "公司买了一只狗看门，怎么做账啊？",
+      "author": "财务梅子",
+      "keyword": "做账",
+      "likes": 1663,
+      "collects": 771,
+      "comment_count": 1232,
+      "fetched_comments": 18,
+      "industry_distribution": {
+        "其他": 17,
+        "制造/工业": 1
+      },
+      "intent_distribution": {
+        "其他": 14,
+        "询价": 4
+      },
+      "competitor_mentions": {},
+      "pain_points": {
+        "功能不够": 1
+      },
+      "representative_comments": [
+        "入生产性生物资产，狗粮入费用",
+        "请问有没有财务疑难杂症沟通群，求加入",
+        "管理费用，毕竟要看门，也是员工[doge]"
+      ],
+      "content_suggestions": [
+        {
+          "type": "行业针对性",
+          "title": "制造/工业行业的财务软件怎么选？",
+          "reason": "评论区'制造/工业'行业用户占比高，针对性内容需求明确"
+        },
+        {
+          "type": "痛点解答",
+          "title": "关于「功能不够」的真相——资深用户的避坑指南",
+          "reason": "评论区中'功能不够'是最突出的用户痛点，直接回应可建立信任"
+        }
+      ],
+      "url": "https://www.xiaohongshu.com/explore/661f9393000000001c00b609"
+    },
+    {
+      "note_id": "no_match_项目管理",
+      "title": "暂无匹配帖子",
+      "author": "未知",
+      "keyword": "项目管理",
+      "likes": 0,
+      "collects": 0,
+      "comment_count": 0,
+      "fetched_comments": 0,
+      "industry_distribution": {},
+      "intent_distribution": {},
+      "competitor_mentions": {},
+      "pain_points": {},
+      "representative_comments": [],
+      "content_suggestions": [],
+      "url": ""
+    }
+  ],
+  "historical": [
+    {
+      "date": "2026-06-30",
+      "summary": {
+        "total_posts": 6,
+        "total_comments": 0,
+        "top_industry": "其他",
+        "sentiment": {
+          "positive": 0,
+          "question": 0,
+          "negative": 0
+        },
+        "overall_industries": {},
+        "overall_intents": {},
+        "overall_competitors": {},
+        "overall_pain_points": {}
+      }
+    },
+    {
+      "date": "2026-06-29",
+      "summary": {
+        "total_posts": 0,
+        "total_comments": 0,
+        "top_industry": "其他",
+        "sentiment": {
+          "positive": 0,
+          "question": 0,
+          "negative": 0
+        },
+        "overall_industries": {},
+        "overall_intents": {},
+        "overall_competitors": {},
+        "overall_pain_points": {}
+      }
+    },
+    {
+      "date": "2026-06-30",
+      "summary": {
+        "total_posts": 3,
+        "total_comments": 54,
+        "top_industry": "其他",
+        "sentiment": {
+          "positive": 2,
+          "question": 1,
+          "negative": 10
+        },
+        "overall_industries": {
+          "其他": 44,
+          "制造/工业": 7,
+          "零售/商贸": 2,
+          "建筑/工程": 1
+        },
+        "overall_intents": {
+          "其他": 47,
+          "正面反馈": 2,
+          "吐槽竞品": 2,
+          "提及竞品": 2,
+          "咨询选型": 1
+        },
+        "overall_competitors": {
+          "金蝶": 2
+        },
+        "overall_pain_points": {
+          "功能不够": 3,
+          "数据不准": 2,
+          "行业不匹配": 1,
+          "没人教": 1,
+          "操作复杂": 1
+        }
+      }
+    }
+  ]
+}

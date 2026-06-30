@@ -3790,15 +3790,30 @@ function getCommentData() {
 // 从后端 API 异步加载评论分析数据
 async function loadCommentAnalysisFromAPI() {
   try {
+    // 优先尝试 API（本地开发有后端）
     const resp = await fetch('/api/comment-analysis');
     const result = await resp.json();
     if (result.success && result.data) {
       commentAnalysisCache = result.data;
-      console.log('[评论分析] 从API加载真实数据, 帖子数:', result.data.posts.length);
+      console.log('[评论分析] 从API加载数据, 帖子数:', result.data.posts.length);
       renderCommentAnalysis();
+      return;
     }
   } catch (e) {
-    console.warn('[评论分析] API加载失败，使用内置种子数据:', e.message);
+    console.warn('[评论分析] API不可用，尝试静态JSON...');
+  }
+  // API 不可用（如 CloudStudio 静态部署），尝试直接加载 JSON 文件
+  try {
+    const resp = await fetch('/data/xhs-comment-analysis.json');
+    const data = await resp.json();
+    if (data && data.posts && data.posts.length) {
+      commentAnalysisCache = data;
+      console.log('[评论分析] 从静态JSON加载数据, 帖子数:', data.posts.length);
+      renderCommentAnalysis();
+      return;
+    }
+  } catch (e2) {
+    console.warn('[评论分析] 静态JSON也加载失败:', e2.message);
   }
 }
 
